@@ -1,5 +1,5 @@
 <template>
-  <v-container  fluid >
+  <v-container fluid  wrapper>
 
     <div class="header">
       <carousel/>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="our_experience">
-      <h1 class="heading_info second">WHAT THE NUMBERS SAY?</h1>
+      <h1 class="heading_info" style="padding-top:3.4rem;">WHAT THE NUMBERS SAY?</h1>
         <v-row class="our_experience_row">
           <v-col>
             <div class="experience_text_align">
@@ -29,7 +29,7 @@
           </v-col>
 
           <v-col>
-            <div class="second_text">
+            <div class="second_text_experience">
               <h2>60+ Employees</h2> <br>
               <p class="meet_game_factory_text">Around the world including: Taiwan, China, United States, Myanmar, Japan, etc.</p>
             </div>
@@ -46,11 +46,11 @@
 
     <div class="our_strength">
       <h1 class="heading_info strangth_heading">OUR STRENGTHS</h1>
-      <v-row class="our_experience_row">
+      <v-row class="our_strength_row">
         <v-col>
-          <div class="experience_text_align">
+          <div class="strength_text_align">
             <v-img src="/icon/Full_Level_Production.png" class="full_level_img"></v-img>
-            <h2 style="padding-left:8rem;">Game Design</h2> <br>
+            <h2 style="text-align:center;">Game Design</h2> <br>
             <p class="meet_game_factory_text">We focus on the production of high quality games at low rates and offer a wide array of services. We can assist you with various degrees of your game project, whether it's design, art, programming, or even the whole development process.</p>
           </div>
         </v-col>
@@ -58,15 +58,15 @@
         <v-col>
           <div class="second_text">
             <v-img src="/icon/Game_Design.png" class="Game_Design"></v-img>
-            <h2 style="padding-left:5.2rem;">Game Development</h2> <br>
+            <h2 style="text-align:center;">Game Development</h2> <br>
             <p class="meet_game_factory_text">We focus on the production of high quality games at low rates and offer a wide array of services. We can assist you with various degrees of your game project, whether it's design, art, programming, or even the whole development process.</p>
           </div>
         </v-col>
 
         <v-col>
-          <div class="last_text">
+          <div class="">
             <v-img src="/icon/Game_Development.png" class="Game_Development"></v-img>
-            <h2 style="padding-left:7rem;">Art Production</h2> <br>
+            <h2 style="text-align:center;">Art Production</h2> <br>
             <p class="meet_game_factory_text">Our teams have completed full level art productions for more than 30 game titles. This includes:</p>
             <p class="meet_game_factory_text">UI and layout analysis planning and design of modular sets concept arts in early production 3D assets and VFX creation engine integration for post production.</p>
           </div>
@@ -74,140 +74,272 @@
       </v-row>
     </div>
 
+
+
     <div class="our_team">
       <h1 class="heading_info_header">OUR TEAM</h1>
       <v-row>
         <v-col class="gray_box">
-          <v-img src="/team/COO.png" class="team_img"></v-img>
-          <h3 class="team_name">Gary Huang</h3>
-          <span class="team_position">COO</span>
+          <div>
+            <v-img src="/team/COO.png" class="team_img"></v-img>
+            <h3 class="team_name">Gary Huang</h3>
+            <div class="team_position text-center">COO</div>
+          </div>
         </v-col>
 
         <v-col class="peter_box">
-          <v-img src="/team/CEO.jpg" class="team_img"></v-img>
-          <h3 class="team_name team_name_peter">Peter</h3>
-          <span class="team_position">CEO</span>
+          <div>
+            <v-img src="/team/CEO.jpg" class="team_img"></v-img>
+            <h3 class="team_name">Peter</h3>
+            <div class="team_position">CEO</div>
+          </div>
         </v-col>
 
         <v-col class="chu_box">
-          <v-img src="/team/CTO.png" class="team_img"></v-img>
+         <div>
+           <v-img src="/team/CTO.png" class="team_img"></v-img>
           <h3 class="team_name team_name_nic">Nic Chu</h3>
-          <span class="team_position">CTO</span>
+          <div class="team_position">CTO</div>
+         </div>
         </v-col>
 
         <v-col class="roy_box">
-          <v-img src="/team/Art_Director.jpg" class="team_img"></v-img>
-          <h3 class="team_name team_name_roy">Roy Huang</h3>
-          <span>Artistic Director</span>
+          <div>
+            <v-img src="/team/Art_Director.jpg" class="team_img"></v-img>
+            <h3 class="team_name team_name_roy">Roy Huang</h3>
+            <div class="team_position">Artistic Director</div>
+          </div>
         </v-col>
       </v-row>
     </div>
 
-    <div class="portfolio">
-          <h1 class="heading_info_portfolio">PORTFOLIO</h1>
-          <v-row>
-              <v-col cols="5">
-                <div class="game_frame">
-                  <a href="#" class="games_button">GAMES</a>
 
 
-                </div>
+    <div class="portfolio"><br><br><br><br><br>
+       <h1 class="heading_info_portfolio">PORTFOLIO</h1>
+                  <v-row>
+                      <v-col cols="5">
+                        <div class="game_frame">
+                          <div style="text-align:right;"><a href="#" class="games_button">GAMES</a></div>
+                        </div>
+                      </v-col>
+
+                      <v-col cols="7">
+                        <div class="portfolio_frame">
+                              <v-btn
+                                text
+                                color="#333333"
+                                @click="showDropdown = !showDropdown"
+                              >
+                                <span class=" games_button_arts">ARTS</span>
+                                <v-icon color="yellow">arrow_drop_down</v-icon>
+                            </v-btn>
+
+                            <div class="arrow_list" v-if="showDropdown" >
+                              <v-btn color="#333333" text><span class="arrow_list_link twoD_link" href="">2D</span></v-btn>
+                              <v-btn color="#333333" text><span class="arrow_list_link threeD_link" href="">3D</span></v-btn>
+                            </div>
+                        </div>
 
 
-              </v-col>
-              <v-col cols="7">
-                <div class="portfolio_frame">
-                    <v-btn
-                      text
-                      color="#333333"
+                      </v-col>
+                  </v-row>
 
-                      @click="showDropdown = !showDropdown"
-                    >
-                      <span class=" games_button_arts">ARTS</span>
-                      <v-icon color="yellow">arrow_drop_down</v-icon>
-                    </v-btn>
+                    <div class="portfolio_img_layer">
+                        <v-row class="text-center align-center justify-center">
+                          <div class="portfolio_img portfolio_img_left left_img_one">
 
-                    <div class="arrow_list" v-if="showDropdown" >
-                      <a class="arrow_list_link" href="">CHARACTERS</a>
-                      <a class="arrow_list_link" href="">ENVRONMENT</a>
-                      <a class="arrow_list_link" href="">CONCEPT ART</a>
+                          </div>
+
+                          <div class="portfolio_img portfolio_img_left left_img_two">
+
+                          </div>
+
+                          <div class="portfolio_img portfolio_img_left left_img_three">
+
+                          </div>
+                        </v-row>
+
+                        <v-row class="text-center align-center justify-center">
+                          <div class="portfolio_img portfolio_img_center center_img_one">
+
+                          </div>
+
+
+                          <div class="portfolio_img portfolio_img_center center_img_two">
+
+                          </div>
+
+
+                          <div class="portfolio_img portfolio_img_center center_img_three">
+
+                          </div>
+                        </v-row>
+
+                        <v-row class="text-center align-center justify-center">
+                          <div  class="portfolio_img portfolio_img_right right_img_one">
+
+                          </div>
+
+                          <div class="portfolio_img portfolio_img_right right_img_two">
+
+                          </div>
+
+                          <div class="portfolio_img portfolio_img_right right_img_three">
+
+                          </div>
+                        </v-row>
+
                     </div>
-                </div>
 
-
-              </v-col>
-          </v-row>
-
-          <v-row class="portfolio_img_layer">
-              <v-col>
-                <div class="portfolio_img portfolio_img_left left_img_one">
-
-                </div>
-
-                <div class="portfolio_img portfolio_img_left left_img_two">
-
-                </div>
-
-                <div class="portfolio_img portfolio_img_left left_img_three">
-
-                </div>
-              </v-col>
-
-              <v-col>
-                <div class="portfolio_img portfolio_img_center center_img_one">
-
-                </div>
-
-
-                <div class="portfolio_img portfolio_img_center center_img_two">
-
-                </div>
-
-
-                <div class="portfolio_img portfolio_img_center center_img_three">
-
-                </div>
-              </v-col>
-
-              <v-col>
-                <div  class="portfolio_img portfolio_img_right right_img_one">
-
-                </div>
-
-                <div class="portfolio_img portfolio_img_right right_img_two">
-
-                </div>
-
-                <div class="portfolio_img portfolio_img_right right_img_three">
-
-                </div>
-              </v-col>
-
-          </v-row>
-
-      <div class="text-center">
-      <v-btn
-        large
-        outlined
-        color="#ffffff"
-      >
-        MORE
-      </v-btn>
-      </div>
+                      <div class="text-center" style="margin-bottom:3.3rem;">
+                        <v-btn
+                          large
+                          outlined
+                          color="#ffffff"
+                        >
+                          MORE
+                        </v-btn>
+                      </div>
 
     </div>
 
-    <div class="our_client">
+    <div class="our_client" style="background-color:#494949;">
+      <v-carousel v-model="model">
+        <v-carousel-item
+          v-for="(color, i) in colors"
+          :key="color"
+        >
+          <v-sheet
+            color="#494949"
+            height="100%"
+            tile
+          >
+            <v-row
+              class="fill-height"
+              align="center"
+              justify="center"
+            >
+              <div class="display-3">
+                <h1 class="heading_info_header_client">OUR CLIENT</h1>
+                <v-row>
+                  <v-col>
+                    <div class="smart_game client_img">
 
+                    </div>
+                  </v-col>
+
+                  <v-col >
+                    <div class="client_img_frame client_img yahoo">
+                    </div>
+                  </v-col>
+
+                  <v-col>
+                   <div class="client_img_frame client_img soft_world">
+
+                   </div>
+                  </v-col>
+
+                  <v-col>
+                    <div class="client_img_frame">
+                      <v-img src="/clients_page/chinese_gamer.jpg" class="client_img"></v-img>
+                    </div>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-row>
+          </v-sheet>
+        </v-carousel-item>
+      </v-carousel>
     </div>
 
-    <div class="testimonials">
+          <div class="testimonials">
+            <h1 class="heading_info_portfolio testimonial_heading">TESTIMONIALS</h1>
 
-    </div>
+              <v-row>
+                <v-col>
+                  <div class="testimonial_about">
+                    Taiwan is a small island, and the mobile game industry is a very close relationship industry. We know and have a strong relationship. And this is the best choice for you to cooperate with us. We are able to provide high quality products, complete on time, and have high integrity and trust. Our success is built on this belief, and we are very proud of our close contacts with industry friends.
+                  </div>
+                </v-col>
 
-    <div class="contact_us">
+                <v-col>
+                    <div class="feedback_user">
+                         <p>Really wonderful work with the graphics and action on "Endless Dungeon." An international quality game for a local budget. Consider us satisfied.</p>   <br>
+                        <v-img src="/clients_page/chinese_gamer.jpg" class=" testimonial_user"></v-img><span>Depred.co</span>
+                    </div>
+                </v-col>
+              </v-row>
 
-    </div>
+          </div>
+
+          <div class="contact_us">
+            <h1 class="heading_info_portfolio contact_us_heading">LET US REALIZE YOUR DREAM GAME TOGETHER!</h1>
+              <v-row>
+                        <div class="combobox">
+                          <v-combobox
+                            v-model="select"
+                            :items="items"
+                            :color="combo_color"
+                            outlined
+                          ></v-combobox>
+                        </div>
+              </v-row>
+
+                <v-row class="text-center align-center justify-center">
+
+                        <div style="width:23%;">
+                          <v-text-field
+                            v-model="first"
+                            label="NAME*"
+                            outlined
+                          ></v-text-field>
+                        </div>
+
+                        <div style="width:35%; margin-left:2rem;">
+                          <v-text-field
+                            v-model="first"
+                            label="EMAIL ADDRESS*"
+                            outlined
+                          ></v-text-field>
+                        </div>
+
+                </v-row>
+
+                <v-row class="text-center align-center justify-center">
+
+                        <div style="width:27%;">
+                          <v-text-field
+
+                            v-model="first"
+                            label="CONTACT NUMBER"
+                            dark
+                            outlined
+                            color="dark"
+                          ></v-text-field>
+                        </div>
+
+                        <div style="width:31%; margin-left:2rem;">
+                          <v-text-field
+                            v-model="first"
+                            label="COMPANY NAME"
+                            outlined
+                          ></v-text-field>
+                        </div>
+
+                </v-row>
+
+            <v-row class="text-center align-center justify-center">
+
+                <div class="combobox">
+                  <v-textarea
+                    solo
+                    name="input-7-4"
+                    value="TELL US ABOUT YOUR PROJECT: Ex. What Platform do you prefer? What is your budget? Is there a game reference? When do you need it to be completed by? "
+                  ></v-textarea>
+                </div>
+            </v-row>
+          </div>
 
   </v-container>
 
@@ -219,13 +351,28 @@
 
 <script>
 import carousel from '@/components/header_carousel.vue';
+
 export default {
    components:{
      carousel
   },
   data () {
     return {
-      showDropdown:false
+      showDropdown:false,
+      model: 0,
+      colors: [
+        'primary',
+        'secondary',
+        'yellow darken-2'
+      ],
+       select: ['SERVICES'],
+      items: [
+        'SERVICES',
+        'Programming',
+        'Design',
+        'Vue',
+        'Vuetify',
+      ],
 
     }
   }
@@ -233,6 +380,11 @@ export default {
 </script>
 
 <style>
+
+.v-text-field--outlined >>> fieldset {
+  border-color: rgba(192, 0, 250, 0.986);
+}
+
 h1.heading_info{
   text-align: center;
   margin-bottom: 2rem;
@@ -249,6 +401,7 @@ h1.heading_info{
     text-align: center;
     margin-bottom: 2rem;
     padding-top: 3.5rem;
+    font-family: 'Libre Baskerville', serif;
   }
 
   .about_website {
@@ -256,7 +409,7 @@ h1.heading_info{
     width: 110%;
     margin-top: 2rem;
     margin-left: -5rem;
-    height: 70vh;
+    padding-bottom: 2rem;
     clip-path: polygon(50% 7%, 53% 0, 100% 0, 100% 100%, 0 100%, 0 0, 47% 0);
   }
 
@@ -293,7 +446,7 @@ h1.heading_info{
     font-family: 'Libre Baskerville', serif;
     width: 110%;
     margin-left: -5rem;
-    height: 70vh;
+    height: 31.5rem;
 
   }
 
@@ -309,39 +462,39 @@ h1.heading_info{
     background-position: top;
     opacity: 0.2;
   }
-   .our_experience_row{
-    margin:3rem;
-  }
-  .second{
-    padding-top: 9rem;
-  }
+
   .experience_text_align {
-    padding-right:7rem;
+    padding-right:5rem;
   }
+
   .last_text{
-    padding-left:8rem;
+    padding-right:2.6rem;
   }
   .second_text{
     padding-left: 3rem;
-    padding-right: 4rem;
+    padding-right: 3rem;
+  }
+  .second_text_experience {
+    padding-right: 6rem ;
+
   }
 
   .full_level_img{
-    width: 4.5vw;
-    height: 6.9vh;
-    margin-left:11rem;
+    width: 5vw;
+    height: 7.8vh;
+    margin: 0 auto;
     margin-bottom:1rem;
   }
   .Game_Design{
     width: 3.4vw;
     height: 7vh;
-    margin-left:11rem;
+    margin: 0 auto;
     margin-bottom:1rem;
   }
   .Game_Development{
     width: 2.2vw;
     height: 6.9vh;
-    margin-left:11.3rem;
+    margin: 0 auto;
     margin-bottom:1rem;
   }
 
@@ -352,7 +505,7 @@ h1.heading_info{
     font-family: 'Libre Baskerville', serif;
     width: 110%;
     margin-left: -5rem;
-    height: 80vh;
+    padding-bottom: 1rem;
 
 
   }
@@ -374,54 +527,53 @@ h1.heading_info{
 
   }
    .our_experience_row{
-    margin:3rem;
+     padding:3rem;
   }
   .second{
     padding-top: 9rem;
   }
-  .experience_text_align {
-    padding-right:7rem;
-  }
+
 
   /* our_team */
   .our_team{
     background-color:#2a2a2a;
     margin-left: -5rem;
     width: 110%;
-    height: 65vh;
+    height: 70vh;
     font-family: 'Libre Baskerville', serif;
     padding-top: 2rem;
+
     padding-left: 3rem;
     margin-top: -4rem;
+    margin-bottom: 1rem;
     clip-path: polygon(51% 9%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
 
 
   }
+  .our_strength_row{
+     padding-top:1.7rem;
+     padding-bottom: 4.6rem;
+     padding-right: 3rem;
+     padding-left: 3rem;
+  }
   .team_img {
-    width: 8rem;
-    height: 8rem;
+    margin: 0 auto;
+    width: 11rem;
+    height: 11rem;
     clip-path: circle(50% at 50% 50%);
   }
 
   .team_name{
     margin-top:1.6rem;
+    text-align: center;
   }
-  .team_name_peter{
-    padding-left: 1.7rem;
-  }
-  .team_name_nic{
-    padding-left: 1rem;
-  }
-  .team_name_roy{
-    padding-left: .5rem;
-  }
+
   .team_position{
-    padding-left:2rem;
+    text-align: center;
   }
 
   .roy_box{
-
-    margin-right: 20rem;
+     margin-right: 12rem;
   }
   .chu_box{
 
@@ -430,12 +582,9 @@ h1.heading_info{
   .peter_box{
 
 
-
-
   }
   .gray_box{
-    margin-left: 20rem;
-
+    padding-left: 10rem;
   }
 
   /* PORTFOLIO*/
@@ -444,30 +593,31 @@ h1.heading_info{
     background-color:#333333;
     margin-left: -5rem;
     width: 110%;
-    height: 147vh;
+    padding-bottom: 3rem;
     font-family: 'Libre Baskerville', serif;
-    padding-top: 2rem;
-    padding-left: 3rem;
-    margin-top: -5rem;
-    clip-path: polygon(51% 4%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
+    /* padding-top: 2rem; */
+    /* padding-left: 3rem; */
+    margin-top: -5.7rem;
+    clip-path: polygon(51% 5%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
 
   }
 
   .portfolio_frame{
-    padding-left:22rem;
+    padding-left:5rem;
   }
   .game_frame{
-    padding-left:39rem;
+
+    padding-left:14rem;
   }
 
   h1.heading_info_portfolio{
     text-align: center;
     margin-bottom: 2rem;
-    padding-top: 3rem;
+    /* margin-top: 3rem; */
   }
 .games_button{
-  font-size: 2rem;
-
+  font-size: 1.7rem;
+  margin-right: -4rem;
 }
 .games_button:link {
   color: #ffffff;
@@ -485,7 +635,9 @@ h1.heading_info{
 
 
   .games_button_arts {
-    font-size: 2rem;
+    margin-left: -10px;
+    padding-left: 13rem;
+    font-size: 1.7rem;
     color: #ffffff;
     text-decoration: none;
   }
@@ -505,12 +657,20 @@ h1.heading_info{
     padding-top:3rem;
   }
 .arrow_list_link {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+
 }
+.twoD_link{
+  padding-left: 12rem;
+}
+.threeD_link{
+    padding-left: 2rem;
+  }
   .arrow_list_link:link{
     color: #ffffff;
     text-decoration: none;
-    padding-right: 3rem;
+    padding-left: 10rem;
   }
   .arrow_list_link:hover{
     color: yellow;
@@ -521,22 +681,26 @@ h1.heading_info{
   }
 
   .portfolio_img_layer{
-    margin-top: 2rem;
+
+    padding-top: 1.4rem;
   }
   .portfolio_img{
+    margin-left: 3rem;
     margin-bottom: 2rem;
-    width: 23rem;
+    width: 20rem;
     height: 18rem;
+
   }
   .portfolio_img_left{
-    margin-left: 22rem;
+    /* margin-left: 22rem; */
+
   }
   .portfolio_img_center{
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
   }
 
   .portfolio_img_right{
-    margin-right: 20.3rem;
+    /* margin-right: 20.3rem; */
   }
   .left_img_one{
     background-image: url('/3d_characters/cha (95).jpg');
@@ -585,6 +749,110 @@ h1.heading_info{
     background-image: url('/3d_characters/cha (26).jpg');
     background-size: cover;
     background-position: right top;
+  }
+
+  /*our_client */
+.our_client{
+  padding-bottom: 7rem;
+  margin-left: -5rem;
+  margin-top: -3.5rem;
+  width: 110%;
+  clip-path: polygon(51% 9%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
+}
+.heading_info_header_client{
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.4rem ;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.client_img {
+    margin: 0 auto;
+    width: 11rem;
+    height: 11rem;
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  .client_img_frame{
+    margin-left: 4rem;
+  }
+
+.smart_game{
+  background-image: url('/clients_page/smart_games.jpg');
+  background-size: cover;
+}
+
+.yahoo {
+  background-image: url('/clients_page/yahoo.jpg');
+  background-size: cover;
+  background-position: right top;
+}
+
+.soft_world{
+  background-image: url('/clients_page/soft_world.jpg');
+  background-size: cover;
+  background-position: right top;
+}
+
+/*testimonials */
+
+.testimonials {
+  margin-top: -3.8rem;
+  background-color: #575757;
+   margin-left: -5rem;
+   width: 110%;
+   padding-bottom: 10rem;
+  font-family: 'Libre Baskerville', serif;
+  clip-path: polygon(51% 9%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
+}
+
+.testimonial_heading{
+  padding-top: 6rem;
+}
+
+.testimonial_user {
+  width: 3rem;
+  height: 3rem;
+  clip-path: circle(50% at 50% 50%);
+}
+
+.testimonial_about{
+  padding: 0 7rem 0 7rem;
+}
+.feedback_user{
+  background-color: white;
+  color: black;
+  padding: 3rem 5rem 3rem 5rem;
+  margin-right: 6rem;
+}
+
+/*contact_us*/
+.contact_us{
+  font-family: 'Libre Baskerville', serif;
+  background-color:#6a6a6a ;
+  margin-top: -4rem;
+  margin-left: -5rem;
+  width: 110%;
+  clip-path: polygon(51% 9%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
+}
+
+.contact_us_heading{
+  padding-top: 5rem;
+}
+
+.combobox{
+  width:60%;
+  margin:0 auto;
+}
+
+.name_email{
+  border: 1px solid red;
+  width: 80%;
+  margin: 0 auto;
+}
+
+   .my-text-style >>> .v-text-field__slot input {
+    color: red
   }
 
 </style>

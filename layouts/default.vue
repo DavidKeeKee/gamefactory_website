@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color:black;" fluid>
+  <v-app style="background-color:black;" fluid wrapper>
 
       <v-row>
         <div style="float:left;">
