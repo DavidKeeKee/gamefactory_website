@@ -4,8 +4,9 @@
       <v-row>
         <div style="float:left;">
           <v-card
-            width="230"
-            height="550"
+
+            width="280px"
+            height="510px"
             color="black"
             tile
 
@@ -167,7 +168,9 @@ export default {
 </script>
 
 <style>
-
+  navigation_bar {
+    background-color: red;
+  }
   .text-size{
     font-size: 1rem;
     font-family: 'Libre Baskerville', serif;

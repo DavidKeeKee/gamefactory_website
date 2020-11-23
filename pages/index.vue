@@ -192,7 +192,7 @@
 
                     </div>
 
-                      <div class="text-center" style="margin-bottom:3.3rem;">
+                      <div class="text-center" style="margin-bottom:5rem;">
                         <v-btn
                           large
                           outlined
@@ -205,14 +205,17 @@
     </div>
 
     <div class="our_client" style="background-color:#494949;">
+      <h1 class="heading_info_header_client">OUR CLIENT</h1>
       <v-carousel v-model="model">
         <v-carousel-item
           v-for="(color, i) in colors"
           :key="color"
+
         >
           <v-sheet
+          class="img_sheet"
             color="#494949"
-            height="100%"
+            height="30%"
             tile
           >
             <v-row
@@ -221,7 +224,6 @@
               justify="center"
             >
               <div class="display-3">
-                <h1 class="heading_info_header_client">OUR CLIENT</h1>
                 <v-row>
                   <v-col>
                     <div class="smart_game client_img">
@@ -257,17 +259,23 @@
             <h1 class="heading_info_portfolio testimonial_heading">TESTIMONIALS</h1>
 
               <v-row>
-                <v-col>
+                <v-col cols="6">
                   <div class="testimonial_about">
                     Taiwan is a small island, and the mobile game industry is a very close relationship industry. We know and have a strong relationship. And this is the best choice for you to cooperate with us. We are able to provide high quality products, complete on time, and have high integrity and trust. Our success is built on this belief, and we are very proud of our close contacts with industry friends.
                   </div>
                 </v-col>
 
-                <v-col>
-                    <div class="feedback_user">
-                         <p>Really wonderful work with the graphics and action on "Endless Dungeon." An international quality game for a local budget. Consider us satisfied.</p>   <br>
-                        <v-img src="/clients_page/chinese_gamer.jpg" class=" testimonial_user"></v-img><span>Depred.co</span>
-                    </div>
+                <v-col cols="6">
+
+                        <v-carousel hide-delimiters class="feedback_user">
+                          <v-carousel-item
+                            v-for="(feedback,i) in feedbacks"
+                            :key="i"
+                          >
+                            <p style="color:black;"> {{ feedback.content }}</p>   <br>
+                            <v-img :src="feedback.src" class=" testimonial_user"></v-img><span style="color:black;"> {{feedback.name }} </span>
+                          </v-carousel-item>
+                        </v-carousel>
                 </v-col>
               </v-row>
 
@@ -280,7 +288,6 @@
                           <v-combobox
                             v-model="select"
                             :items="items"
-                            :color="combo_color"
                             outlined
                           ></v-combobox>
                         </div>
@@ -290,7 +297,6 @@
 
                         <div style="width:23%;">
                           <v-text-field
-                            v-model="first"
                             label="NAME*"
                             outlined
                           ></v-text-field>
@@ -298,7 +304,6 @@
 
                         <div style="width:35%; margin-left:2rem;">
                           <v-text-field
-                            v-model="first"
                             label="EMAIL ADDRESS*"
                             outlined
                           ></v-text-field>
@@ -310,8 +315,6 @@
 
                         <div style="width:27%;">
                           <v-text-field
-
-                            v-model="first"
                             label="CONTACT NUMBER"
                             dark
                             outlined
@@ -321,7 +324,6 @@
 
                         <div style="width:31%; margin-left:2rem;">
                           <v-text-field
-                            v-model="first"
                             label="COMPANY NAME"
                             outlined
                           ></v-text-field>
@@ -372,6 +374,23 @@ export default {
         'Design',
         'Vue',
         'Vuetify',
+      ],
+      feedbacks: [
+        {
+          content: 'Really wonderful work with the graphics and action on "Endless Dungeon." An international quality game for a local budget. Consider us satisfied.',
+          src: '/clients_page/chinese_gamer.jpg',
+          name: 'Depred.co'
+        },
+        {
+          content: 'Really wonderful work with the graphics and action on "Endless Dungeon." An international quality game for a local budget. Consider us satisfied.',
+          src: '/clients_page/chinese_gamer.jpg',
+          name: 'Depred.co'
+        },
+        {
+          content: 'Really wonderful work with the graphics and action on "Endless Dungeon." An international quality game for a local budget. Consider us satisfied.',
+          src: '/clients_page/chinese_gamer.jpg',
+          name: 'Depred.co'
+        },
       ],
 
     }
@@ -753,23 +772,26 @@ h1.heading_info{
 
   /*our_client */
 .our_client{
-  padding-bottom: 7rem;
+  padding-bottom: 8rem;
   margin-left: -5rem;
-  margin-top: -3.5rem;
+  margin-top: -4.4rem;
   width: 110%;
   clip-path: polygon(51% 9%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
 }
+.img_sheet{
+  padding-top: 9.5rem;
+}
 .heading_info_header_client{
   text-align: center;
-  margin-bottom: 2rem;
+  padding-top: 6.6rem;
   font-size: 2.4rem ;
   font-family: 'Libre Baskerville', serif;
 }
 
 .client_img {
     margin: 0 auto;
-    width: 11rem;
-    height: 11rem;
+    width: 7.8rem;
+    height: 7.8rem;
     clip-path: circle(50% at 50% 50%);
   }
 
@@ -780,24 +802,32 @@ h1.heading_info{
 .smart_game{
   background-image: url('/clients_page/smart_games.jpg');
   background-size: cover;
+  width: 7.8rem;
+  height: 7.8rem;
 }
 
 .yahoo {
   background-image: url('/clients_page/yahoo.jpg');
   background-size: cover;
   background-position: right top;
+  width: 7.8rem;
+  height: 7.8rem;
 }
 
 .soft_world{
   background-image: url('/clients_page/soft_world.jpg');
   background-size: cover;
   background-position: right top;
+  width: 7.8rem;
+  height: 7.8rem;
 }
+
+
 
 /*testimonials */
 
 .testimonials {
-  margin-top: -3.8rem;
+  margin-top: -5rem;
   background-color: #575757;
    margin-left: -5rem;
    width: 110%;
@@ -822,7 +852,8 @@ h1.heading_info{
 .feedback_user{
   background-color: white;
   color: black;
-  padding: 3rem 5rem 3rem 5rem;
+  width: 80%;
+  padding: 6rem 5rem 3rem 5rem;
   margin-right: 6rem;
 }
 
@@ -851,9 +882,7 @@ h1.heading_info{
   margin: 0 auto;
 }
 
-   .my-text-style >>> .v-text-field__slot input {
-    color: red
-  }
+
 
 </style>
 
