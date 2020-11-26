@@ -44,6 +44,61 @@
         </v-row>
     </div>
 
+    <div class="skill_page">
+      <v-row class="our_experience_row">
+        <v-col>
+          <div class="">
+            <h2 style="text-align: center;">SKILLS</h2> <br>
+            <p class="meet_game_factory_text">We are familiar with the language of mobile game development. This means we can meet all your needs in Unity, C#, C,
+            Delphi, Java, SQL and other development languages. Also familiar with the Unity game engine, if you are interested in
+            us, you are welcome to contact us.</p>
+          </div>
+        </v-col>
+
+        <v-col>
+          <div class="">
+            <v-progress-linear
+              v-model="unity"
+              color="#6157f2"
+              rounded
+              height="10"
+            ></v-progress-linear>
+            <div class="percentage_text">Unity 95%</div>
+          </div>
+
+          <div class="skill_line">
+            <v-progress-linear
+              v-model="unreal"
+              color="#6157f2"
+              rounded
+              height="10"
+            ></v-progress-linear>
+            <div class="percentage_text">Unreal 95%</div>
+          </div>
+
+          <div class="skill_line">
+            <v-progress-linear
+              v-model="cplus"
+              color="#6157f2"
+              rounded
+              height="10"
+            ></v-progress-linear>
+            <div class="percentage_text">C++ 93%</div>
+          </div>
+
+          <div class="skill_line">
+            <v-progress-linear
+              v-model="delphi"
+              color="#6157f2"
+              rounded
+              height="10"
+            ></v-progress-linear>
+            <div class="percentage_text">Delphi 90%</div>
+          </div>
+        </v-col>
+      </v-row>
+    </div>
+
     <div class="our_strength">
       <h1 class="heading_info strangth_heading">OUR STRENGTHS</h1>
       <v-row class="our_strength_row">
@@ -70,7 +125,61 @@
             <p class="meet_game_factory_text">Our teams have completed full level art productions for more than 30 game titles. This includes:</p>
             <p class="meet_game_factory_text">UI and layout analysis planning and design of modular sets concept arts in early production 3D assets and VFX creation engine integration for post production.</p>
           </div>
+          <v-card-actions>
+
+            <v-spacer></v-spacer>
+
+            <v-btn
+              icon
+              @click="show = !show"
+            >
+              <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+            </v-btn>
+          </v-card-actions>
         </v-col>
+        <v-expand-transition>
+          <div v-show="show">
+
+
+            <v-card-text>
+              <v-row style="line-height: 1.5;">
+                <v-col>
+                  <div class="strength_text_align">
+                    <v-img src="/icon/3D_Animation.png" class="full_level_img_animation"></v-img>
+                    <h2 style="text-align:center;">3D Animation</h2> <br>
+                    <p class="meet_game_factory_text">Our animation team is experienced in comprehensive animation techniques and cross platform
+                    production, and is capable to satisfy the most needs on the market. We believe that only with
+                    passionate should a product reach its full potential -- to achieve this mission our team members are all
+                    gamers and artists themselves.</p>
+                  </div>
+                </v-col>
+
+                <v-col>
+                  <div class="second_text">
+                    <v-img src="/icon/3D_Assets.png" class="full_level_img_assets"></v-img>
+                    <h2 style="text-align:center;">3D Assets</h2> <br>
+                    <p class="meet_game_factory_text">Our teams are committed to create various kinds of 3D assets through the most advanced techniques
+                    and tools up to date. Our past experience allows us to handle a wide array of stylized assets on most
+                    of the popular game platforms. Our work on vehicles, weapons, and interior assets have been
+                    especially praised in the past.</p>
+                  </div>
+                </v-col>
+
+                <v-col>
+                  <div class="characters">
+                    <v-img src="/icon/3D_Characters.png" class="Game_Development"></v-img>
+                    <h2 style="text-align:center;">3D Characters</h2> <br>
+                    <p class="meet_game_factory_text">Game Factory's character production team, who are good at creating high-end realistic characters on
+                    next generation platform, have been working with many AAA developers in high-end character
+                    production projects; meanwhile, we have the extensive project experience in creating the stylized
+                    hand-painting characters.</p>
+
+                  </div>
+                </v-col>
+              </v-row>
+            </v-card-text>
+          </div>
+        </v-expand-transition>
       </v-row>
     </div>
 
@@ -207,11 +316,7 @@
     <div class="our_client" style="background-color:#494949;">
       <h1 class="heading_info_header_client">OUR CLIENT</h1>
       <v-carousel v-model="model">
-        <v-carousel-item
-          v-for="(color, i) in colors"
-          :key="color"
-
-        >
+        <v-carousel-item>
           <v-sheet
           class="img_sheet"
             color="#494949"
@@ -232,12 +337,12 @@
                   </v-col>
 
                   <v-col >
-                    <div class="client_img_frame client_img yahoo">
+                    <div class="client_img_frame client_img aimhigh_global">
                     </div>
                   </v-col>
 
                   <v-col>
-                   <div class="client_img_frame client_img soft_world">
+                   <div class="client_img_frame client_img compal">
 
                    </div>
                   </v-col>
@@ -247,6 +352,123 @@
                       <v-img src="/clients_page/chinese_gamer.jpg" class="client_img"></v-img>
                     </div>
                   </v-col>
+                </v-row>
+              </div>
+            </v-row>
+          </v-sheet>
+        </v-carousel-item>
+
+
+        <v-carousel-item>
+          <v-sheet
+          class="img_sheet"
+            color="#494949"
+            height="30%"
+            tile
+          >
+            <v-row
+              class="fill-height"
+              align="center"
+              justify="center"
+            >
+              <div class="display-3">
+                <v-row>
+                  <v-col>
+                    <div class="hidden_boss client_img">
+
+                    </div>
+                  </v-col>
+
+                  <v-col >
+                    <div class="client_img_frame client_img jumbo">
+                    </div>
+                  </v-col>
+
+                  <v-col>
+                   <div class="client_img_frame client_img metwo">
+
+                   </div>
+                  </v-col>
+
+                  <v-col>
+                    <div class="client_img_frame">
+                      <v-img src="/clients_page/nanshanlife.jpg" class="client_img"></v-img>
+                    </div>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-row>
+          </v-sheet>
+        </v-carousel-item>
+
+
+        <v-carousel-item>
+          <v-sheet
+          class="img_sheet"
+            color="#494949"
+            height="30%"
+            tile
+          >
+            <v-row
+              class="fill-height"
+              align="center"
+              justify="center"
+            >
+              <div class="display-3">
+                <v-row>
+                  <v-col>
+                    <div class="noxy_games client_img">
+
+                    </div>
+                  </v-col>
+
+                  <v-col >
+                    <div class="client_img_frame client_img oath">
+                    </div>
+                  </v-col>
+
+                  <v-col>
+                   <div class="client_img_frame client_img softstar">
+
+                   </div>
+                  </v-col>
+
+                  <v-col>
+                    <div class="client_img_frame">
+                      <v-img src="/clients_page/onemt.jpg" class="client_img"></v-img>
+                    </div>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-row>
+          </v-sheet>
+        </v-carousel-item>
+
+         <v-carousel-item>
+          <v-sheet
+          class="img_sheet"
+            color="#494949"
+            height="30%"
+            tile
+          >
+            <v-row
+              class="fill-height"
+              align="center"
+              justify="center"
+            >
+              <div class="display-3">
+                <v-row>
+                  <v-col>
+                    <div class="softworld client_img">
+
+                    </div>
+                  </v-col>
+
+                  <v-col >
+                    <div class="client_img_frame client_img yahoo">
+                    </div>
+                  </v-col>
+
                 </v-row>
               </div>
             </v-row>
@@ -286,7 +508,11 @@
               <v-row>
                         <div class="combobox">
                           <v-combobox
+                            background-color="#1E1E1E"
+                            height="3.7rem"
                             v-model="select"
+                            class="custom-label-color"
+                            color="yellow"
                             :items="items"
                             outlined
                           ></v-combobox>
@@ -295,16 +521,25 @@
 
                 <v-row class="text-center align-center justify-center">
 
-                        <div style="width:23%;">
+                        <div style="width:23%; border-radius: 158px;">
+                          <!-- <input  type="text" id="fname" name="fname" placeholder="NAME*"> -->
                           <v-text-field
+                            background-color="#1E1E1E"
+                            height="3.7rem"
                             label="NAME*"
+                            class="custom-label-color"
+                            color="yellow"
                             outlined
                           ></v-text-field>
                         </div>
 
                         <div style="width:35%; margin-left:2rem;">
                           <v-text-field
+                            background-color="#1E1E1E"
+                            height="3.7rem"
                             label="EMAIL ADDRESS*"
+                            class="custom-label-color"
+                            color="yellow"
                             outlined
                           ></v-text-field>
                         </div>
@@ -315,16 +550,22 @@
 
                         <div style="width:27%;">
                           <v-text-field
+                            background-color="#1E1E1E"
+                            height="3.7rem"
                             label="CONTACT NUMBER"
                             dark
                             outlined
-                            color="dark"
+                            class="custom-label-color"
+                            color="yellow"
                           ></v-text-field>
                         </div>
 
                         <div style="width:31%; margin-left:2rem;">
                           <v-text-field
+                            background-color="#1E1E1E"
                             label="COMPANY NAME"
+                            class="custom-label-color"
+                            color=" #c7b442"
                             outlined
                           ></v-text-field>
                         </div>
@@ -334,13 +575,53 @@
             <v-row class="text-center align-center justify-center">
 
                 <div class="combobox">
-                  <v-textarea
+                  <!-- <v-textarea  @click="removevalue"
+                    background-color="#1E1E1E"
+                    color="#c7b442"
+                    class="textarea"
+                    id="textarea"
                     solo
                     name="input-7-4"
-                    value="TELL US ABOUT YOUR PROJECT: Ex. What Platform do you prefer? What is your budget? Is there a game reference? When do you need it to be completed by? "
-                  ></v-textarea>
+                    value="TELL US ABOUT YOUR PROJECT:
+  EX.WHAT PLATFORM DO YOU PREFER?
+  WHAT IS YOUR BUDGET?
+  IS THERE A GAME REFERENCE?
+  WHEN DO YOU NEED IT TO BE COMPLETED BY? "
+                  ></v-textarea> -->
+
+                      <textarea id="textarea"   class="w3review"  @click="removevalue">
+    TELL US ABOUT YOUR PROJECT:
+    EX.WHAT PLATFORM DO YOU PREFER?
+    WHAT IS YOUR BUDGET?
+    IS THERE A GAME REFERENCE?
+    WHEN DO YOU NEED IT TO BE COMPLETED BY?
+                      </textarea>
+
                 </div>
+
             </v-row>
+             <v-row class="text-center align-center justify-center">
+              <v-checkbox
+                v-model="agreement"
+                :rules="[rules.required]"
+                color="black"
+
+              >
+                <template v-slot:label>
+                 By sending my personal data, I acknowledge i have read and accepted our privacy policy.
+                </template>
+              </v-checkbox>
+             </v-row>
+
+             <v-row class="text-center align-center justify-center send_button">
+              <v-btn style="background-color:#c7b442;"
+                color="black"
+                outlined
+
+              >
+                <span style="font-weight:bold;">SEND</span>
+              </v-btn>
+             </v-row>
           </div>
 
   </v-container>
@@ -352,21 +633,43 @@
 
 
 <script>
+
 import carousel from '@/components/header_carousel.vue';
 
 export default {
    components:{
      carousel
   },
+  methods:{
+          removevalue(){
+          document.getElementById('textarea').value = "";
+          document.getElementById("textarea").innerHTML = "";
+          // document.getElementById("textarea").style.color = "red";
+        },
+
+  },
   data () {
     return {
       showDropdown:false,
+      show: false,
+      agreement: false,
+      unity: 95,
+      unreal: 95,
+      cplus: 93,
+      delphi:90,
+      rules: {
+        email: v => !!(v || '').match(/@/) || 'Please enter a valid email',
+        length: len => v => (v || '').length >= len || `Invalid character length, required ${len}`,
+        password: v => !!(v || '').match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/) ||
+          'Password must contain an upper case letter, a numeric character, and a special character',
+        required: v => !!v || 'This field is required',
+      },
       model: 0,
-      colors: [
-        'primary',
-        'secondary',
-        'yellow darken-2'
-      ],
+      // colors: [
+      //   'primary',
+      //   'secondary',
+      //   'yellow darken-2'
+      // ],
        select: ['SERVICES'],
       items: [
         'SERVICES',
@@ -378,23 +681,24 @@ export default {
       feedbacks: [
         {
           content: 'Really wonderful work with the graphics and action on "Endless Dungeon." An international quality game for a local budget. Consider us satisfied.',
-          src: '/clients_page/chinese_gamer.jpg',
+          src: '/testimonials/gf-logo-02-50x50.png',
           name: 'Depred.co'
         },
         {
-          content: 'Really wonderful work with the graphics and action on "Endless Dungeon." An international quality game for a local budget. Consider us satisfied.',
-          src: '/clients_page/chinese_gamer.jpg',
-          name: 'Depred.co'
+          content: '"This is exactly the game we wanted and our proud to call our own. Very satisfied with both the game play plus the in-app monetization features.We counted on Game Factory\'s expertise, and they delivered."',
+          src: '/testimonials/photo-1-50x50.jpg',
+          name: '7EEGAMES.co'
         },
         {
-          content: 'Really wonderful work with the graphics and action on "Endless Dungeon." An international quality game for a local budget. Consider us satisfied.',
-          src: '/clients_page/chinese_gamer.jpg',
-          name: 'Depred.co'
+          content: 'Our game "War Pirates" was made in large part due to Game Factory\'s founders - Eason and Sappy.War Pirates involves an \'immersive imaginative world\' that can only be brought to life by a highly skilled creative director.',
+          src: '/testimonials/sega-logo-50x50.jpg',
+          name: 'Sega'
         },
       ],
 
     }
-  }
+  },
+
 }
 </script>
 
@@ -409,7 +713,7 @@ h1.heading_info{
   margin-bottom: 2rem;
 }
   .header{
-    margin-top:-32.6rem;
+    margin-top:-30rem;
     margin-left:4.2rem;
 
     background-color:black;
@@ -493,6 +797,9 @@ h1.heading_info{
     padding-left: 3rem;
     padding-right: 3rem;
   }
+  .characters{
+    padding-bottom: 3rem;
+  }
   .second_text_experience {
     padding-right: 6rem ;
 
@@ -504,6 +811,19 @@ h1.heading_info{
     margin: 0 auto;
     margin-bottom:1rem;
   }
+  .full_level_img_animation{
+    width: 3.3vw;
+    height: 7vh;
+    margin: 0 auto;
+    margin-bottom:1rem;
+  }
+  .full_level_img_assets{
+    width: 3.3vw;
+    height: 7.2vh;
+    margin: 0 auto;
+    margin-bottom:1rem;
+  }
+
   .Game_Design{
     width: 3.4vw;
     height: 7vh;
@@ -516,6 +836,37 @@ h1.heading_info{
     margin: 0 auto;
     margin-bottom:1rem;
   }
+
+  /* skill page */
+  .skill_page{
+    position: relative;
+    font-family: 'Libre Baskerville', serif;
+    width: 110%;
+    margin-left: -5rem;
+    height: 31.5rem;
+
+  }
+
+  .skill_page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("/background/skill_page.png");
+    background-size: cover;
+    background-position: top;
+    opacity: 0.5;
+  }
+
+  .skill_line{
+    margin-top: 4rem;
+  }
+.percentage_text{
+    text-align:right;
+   padding-top:1rem;
+}
 
   /*our_experience */
 
@@ -563,7 +914,7 @@ h1.heading_info{
     padding-top: 2rem;
 
     padding-left: 3rem;
-    margin-top: -4rem;
+    margin-top: -6rem;
     margin-bottom: 1rem;
     clip-path: polygon(51% 9%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
 
@@ -580,6 +931,10 @@ h1.heading_info{
     width: 11rem;
     height: 11rem;
     clip-path: circle(50% at 50% 50%);
+  }
+
+  .team_img:hover{
+    opacity: 0.5;
   }
 
   .team_name{
@@ -806,16 +1161,74 @@ h1.heading_info{
   height: 7.8rem;
 }
 
-.yahoo {
-  background-image: url('/clients_page/yahoo.jpg');
+.hidden_boss{
+  background-image: url('/clients_page/hidden_boss.jpg');
   background-size: cover;
-  background-position: right top;
+  width: 7.8rem;
+  height: 7.8rem;
+}
+.noxy_games {
+  background-image: url('/clients_page/noxy_games.jpg');
+  background-size: cover;
   width: 7.8rem;
   height: 7.8rem;
 }
 
-.soft_world{
+.oath {
+  background-image: url('/clients_page/oath.jpg');
+  background-size: cover;
+  width: 7.8rem;
+  height: 7.8rem;
+   background-position:top;
+}
+
+.softstar {
+  background-image: url('/clients_page/softstar.jpg');
+  background-size: cover;
+  width: 7.8rem;
+  height: 7.8rem;
+   background-position:top;
+}
+
+.yahoo {
+  background-image: url('/clients_page/yahoo.jpg');
+  background-size: cover;
+  width: 7.8rem;
+  height: 7.8rem;
+   background-position:top;
+}
+
+.softworld {
   background-image: url('/clients_page/soft_world.jpg');
+  background-size: cover;
+  width: 7.8rem;
+  height: 7.8rem;
+   background-position:top;
+}
+
+.jumbo{
+  background-image: url('/clients_page/jumbo.jpg');
+  background-size: cover;
+  width: 7.8rem;
+  height: 7.8rem;
+}
+.metwo{
+  background-image: url('/clients_page/me2.jpg');
+  background-size: cover;
+  width: 7.8rem;
+  height: 7.8rem;
+}
+
+.aimhigh_global {
+  background-image: url('/clients_page/aimhigh_global.jpg');
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-position: right top;
+
+}
+
+.compal{
+  background-image: url('/clients_page/compal.jpg');
   background-size: cover;
   background-position: right top;
   width: 7.8rem;
@@ -850,11 +1263,11 @@ h1.heading_info{
   padding: 0 7rem 0 7rem;
 }
 .feedback_user{
+  width: 80%;
   background-color: white;
   color: black;
-  width: 80%;
-  padding: 6rem 5rem 3rem 5rem;
-  margin-right: 6rem;
+  padding: 6rem 6rem 3rem 5rem;
+
 }
 
 /*contact_us*/
@@ -881,6 +1294,62 @@ h1.heading_info{
   width: 80%;
   margin: 0 auto;
 }
+
+/* contact */
+.textarea{
+  resize: none;
+  border-radius: 12px;
+  border:4px solid #c7b442;
+  height:10rem;
+  color: #c7b442 ;
+}
+  textarea:focus ~ label{
+          color: #55c57a;
+  }
+  .custom-label-color .v-label {
+    color: #c7b442;
+  }
+   .custom-label-color .v-label {
+    color: #c7b442;
+  }
+  .custom-label-color{
+    border-radius: 12px;
+    height: 5rem;
+  }
+
+  .custom-label-color .textarea{
+    border-radius: 12px;
+    border: 4px solid #c7b442;
+    height: 8rem;
+    padding-bottom: 3rem;
+  }
+  .custom-label-color:focus{
+    border: 1px solid #c7b442;
+  }
+
+  .v-text-field--outlined fieldset {
+    border: 4px solid #c7b442 !important
+
+  }
+
+  .w3review {
+    color:#c7b442;
+    background-color:#1E1E1E;
+    border:4px solid #c7b442;
+    border-radius: 12px;
+    width: 100%;
+    height: 10rem;
+  }
+
+  .send_button{
+    padding-bottom: 3rem;
+  }
+  /* textarea:right-answer { color: blue;} */
+
+
+
+
+
 
 
 
