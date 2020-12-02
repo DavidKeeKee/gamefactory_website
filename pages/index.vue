@@ -1,5 +1,15 @@
 <template>
   <v-container fluid  wrapper>
+    <!-- The Modal -->
+
+    <div id="myModal" class="modal" >
+      <span class="close" @click="imageclose()">&times;</span>
+      <img :src="largeimage" class="modal-content" >
+
+
+
+    </div>
+    <!-- End The Modal -->
 
     <div class="header">
       <carousel/>
@@ -256,60 +266,102 @@
 
                     <div class="portfolio_img_layer">
                         <v-row class="text-center align-center justify-center">
-                          <div class="portfolio_img portfolio_img_left left_img_one">
 
-                          </div>
+                          <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (95).jpg');" src="/3d_characters/cha (95).jpg"
+                           alt="placeholder">
 
-                          <div class="portfolio_img portfolio_img_left left_img_two">
+                          <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (69).jpg');" src="/3d_characters/cha (69).jpg"
+                           alt="placeholder">
 
-                          </div>
-
-                          <div class="portfolio_img portfolio_img_left left_img_three">
-
-                          </div>
+                          <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (23).jpg');" src="/3d_characters/cha (23).jpg"
+                           alt="placeholder">
                         </v-row>
 
                         <v-row class="text-center align-center justify-center">
-                          <div class="portfolio_img portfolio_img_center center_img_one">
 
-                          </div>
-
-
-                          <div class="portfolio_img portfolio_img_center center_img_two">
-
-                          </div>
+                           <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/3d_characters/cha (59).jpg');" src="/3d_characters/cha (59).jpg"
+                           alt="placeholder">
 
 
-                          <div class="portfolio_img portfolio_img_center center_img_three">
+                          <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/3d_characters/cha (33).jpg');" src="/3d_characters/cha (33).jpg"
+                           alt="placeholder">
 
-                          </div>
+
+
+                          <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/3d_characters/cha (24).jpg');" src="/3d_characters/cha (24).jpg"
+                           alt="placeholder">
                         </v-row>
 
                         <v-row class="text-center align-center justify-center">
-                          <div  class="portfolio_img portfolio_img_right right_img_one">
 
-                          </div>
+                            <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/3d_characters/cha (25).jpg');" src="/3d_characters/cha (25).jpg"
+                             alt="placeholder">
 
-                          <div class="portfolio_img portfolio_img_right right_img_two">
+                            <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/3d_characters/cha (105).jpg');" src="/3d_characters/cha (105).jpg"
+                             alt="placeholder">
 
-                          </div>
+                             <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/3d_characters/cha(26).jpg');" src="/3d_characters/cha(26).jpg"
+                             alt="placeholder">
 
-                          <div class="portfolio_img portfolio_img_right right_img_three">
-
-                          </div>
                         </v-row>
 
                     </div>
 
-                      <div class="text-center" style="margin-bottom:5rem;">
-                        <v-btn
-                          large
-                          outlined
-                          color="#ffffff"
-                        >
-                          MORE
-                        </v-btn>
-                      </div>
+
+
+       <div class="second_more" v-show="moreshow">
+          <v-row class="text-center align-center justify-center">
+
+            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (1).jpg');" src="/3d_characters/cha (1).jpg"
+             alt="placeholder">
+
+            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (2).jpg');" src="/3d_characters/cha (2).jpg"
+             alt="placeholder">
+
+            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (3).jpg');" src="/3d_characters/cha (3).jpg"
+             alt="placeholder">
+          </v-row>
+
+          <v-row class="text-center align-center justify-center">
+
+             <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/3d_characters/cha (4).jpg');" src="/3d_characters/cha (4).jpg"
+             alt="placeholder">
+
+
+            <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/3d_characters/cha (5).jpg');" src="/3d_characters/cha (5).jpg"
+             alt="placeholder">
+
+
+
+            <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/3d_characters/cha (6).jpg');" src="/3d_characters/cha (6).jpg"
+             alt="placeholder">
+          </v-row>
+
+          <v-row class="text-center align-center justify-center">
+
+              <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/3d_characters/cha (7).jpg');" src="/3d_characters/cha (7).jpg"
+               alt="placeholder">
+
+              <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/3d_characters/cha (8).jpg');" src="/3d_characters/cha (8).jpg"
+               alt="placeholder">
+
+               <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/3d_characters/cha (9).jpg');" src="/3d_characters/cha (9).jpg"
+               alt="placeholder">
+          </v-row>
+      </div>
+
+
+
+      <div class="text-center" style="margin-bottom:5rem;">
+        <v-btn
+          large
+          outlined
+          color="#ffffff"
+          @click="moreshow = !moreshow"
+        >
+          MORE
+        </v-btn>
+      </div>
 
     </div>
 
@@ -633,7 +685,6 @@
 
 
 <script>
-
 import carousel from '@/components/header_carousel.vue';
 
 export default {
@@ -645,18 +696,40 @@ export default {
           document.getElementById('textarea').value = "";
           document.getElementById("textarea").innerHTML = "";
           // document.getElementById("textarea").style.color = "red";
+
+        },
+            showImg(link) {
+            var modal = document.getElementById('myModal'); // Get modal
+            var img = document.getElementById('myImg'); // get image link
+
+            this.largeimage = link
+             modal.style.display = "block";
+
+         },
+
+          imageclose() {
+            var close = document.getElementById("myModal");
+            close.style.display = "none"
+          }
         },
 
-  },
+
   data () {
     return {
       showDropdown:false,
       show: false,
+      moreshow:false,
       agreement: false,
       unity: 95,
       unreal: 95,
       cplus: 93,
       delphi:90,
+      modal: "",
+      img:'',
+      modalImg:'',
+      captionText:'',
+      largeimage:'',
+      src:'',
       rules: {
         email: v => !!(v || '').match(/@/) || 'Please enter a valid email',
         length: len => v => (v || '').length >= len || `Invalid character length, required ${len}`,
@@ -972,7 +1045,7 @@ h1.heading_info{
     /* padding-top: 2rem; */
     /* padding-left: 3rem; */
     margin-top: -5.7rem;
-    clip-path: polygon(51% 5%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
+    clip-path: polygon(51% 3%, 54% 0, 100% 0, 100% 100%, 0 100%, 0 0, 48% 0);
 
   }
 
@@ -1058,71 +1131,69 @@ h1.heading_info{
 
     padding-top: 1.4rem;
   }
+
+  .second_more{
+    padding-bottom: 3rem;
+  }
   .portfolio_img{
     margin-left: 3rem;
     margin-bottom: 2rem;
     width: 20rem;
     height: 18rem;
+    cursor: pointer;
+    transition: 0.3s;
 
-  }
-  .portfolio_img_left{
-    /* margin-left: 22rem; */
-
-  }
-  .portfolio_img_center{
-    /* margin-left: 1rem; */
-  }
-
-  .portfolio_img_right{
-    /* margin-right: 20.3rem; */
-  }
-  .left_img_one{
-    background-image: url('/3d_characters/cha (95).jpg');
-    background-size: cover;
-    background-position: left top;
-  }
-  .left_img_two{
-    background-image: url('/3d_characters/cha (69).jpg');
-    background-size: cover;
-    background-position: left top;
-  }
-  .left_img_three{
-    background-image: url('/3d_characters/cha (23).jpg');
-    background-size: cover;
-    background-position: left top;
-  }
-
-  .center_img_one{
-    background-image: url('/3d_characters/cha (59).jpg');
-    background-size: cover;
-    background-position: left top;
-  }
-
-  .center_img_two{
-    background-image: url('/3d_characters/cha (33).jpg');
-    background-size: cover;
-  }
-  .center_img_three{
-    background-image: url('/3d_characters/cha (24).jpg');
-    background-size: cover;
-    background-position: left top;
   }
 
 
-  .right_img_one{
-    background-image: url('/3d_characters/cha (25).jpg');
-    background-size: cover;
-    background-position: right top;
+  .portfolio_img:hover {
+    opacity: 0.6;
+    }
+
+
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0%;
+    text-align: center;
+    top: 0%;
+    margin-top: 2rem;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+
   }
-  .right_img_two{
-    background-image: url('/3d_characters/cha (105).jpg');
-    background-size: cover;
-    background-position: left top;
+
+
+  .modal-content {
+    margin: auto;
+    margin-top: 12rem;
+
+    width: 80%;
+    max-width: 700px;
   }
-  .right_img_three{
-    background-image: url('/3d_characters/cha (26).jpg');
-    background-size: cover;
-    background-position: right top;
+
+
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 115px;
+    right: 30rem;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   /*our_client */
@@ -1345,12 +1416,6 @@ h1.heading_info{
     padding-bottom: 3rem;
   }
   /* textarea:right-answer { color: blue;} */
-
-
-
-
-
-
 
 
 </style>
