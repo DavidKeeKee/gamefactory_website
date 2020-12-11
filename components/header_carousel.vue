@@ -1,10 +1,10 @@
 <template>
   <v-card
-    elevation="24"
+  class="carousel_card"
 
 
   >
-   <v-carousel width="100%" height="100%">
+   <v-carousel class="ma-0 pa-0"  height="100%">
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
@@ -86,8 +86,21 @@
 <style>
 .header_text {
   width: 70%;
-  margin: 23% 0 0 6%;
+  padding: 23% 0 0 6%;
   font-size: 1.2rem;
   font-family: 'Libre Baskerville', serif;
 }
+
+  @media screen and (min-width: 1800px) {
+     body {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .carousel_card {
+
+
+    }
+  }
 </style>

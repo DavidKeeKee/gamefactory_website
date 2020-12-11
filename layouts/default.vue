@@ -1,52 +1,52 @@
 <template>
-  <v-app style="background-color:black;" fluid wrapper>
+  <v-app  >
 
-      <v-row>
-        <div style="float:left;">
-          <v-card
+    <v-navigation-drawer
+      fixed
+      app
+      permanent
+      width="9vw"
+      class="navigation_width"
+      tile
+      style="background-color:black;"
 
-            width="280px"
-            height="510px"
-            color="black"
-            tile
+    >
 
-          >
 
-              <v-img src="/icon/LOGO.png" class="logo"></v-img>
 
-              <v-list
-                flat
-                dense
-                color="black"
-                active-class="black"
+            <v-img src="/icon/LOGO.png" class="logo"></v-img>
 
+            <v-list
+              flat
+              dense
+              color="black"
+              active-class="black"
+
+            >
+              <v-list-item-group
+                color="yellow"
               >
-                <v-list-item-group
-                  color="yellow"
-                >
-                <v-list-item
-                  class="click_active"
-                  v-for="item in items"
-                  :key="item.title"
-                  :to="item.to"
-                >
+              <v-list-item
+                class="click_active"
+                v-for="item in items"
+                :key="item.title"
+                :to="item.to"
+              >
 
 
-                  <v-list-item-content>
-                    <v-list-item-title class="pl-3"><span class="text-size">{{ item.title }}</span></v-list-item-title>
-                  </v-list-item-content>
+                <v-list-item-content>
+                  <v-list-item-title class="pl-3"><span class="text-size">{{ item.title }}</span></v-list-item-title>
+                </v-list-item-content>
 
 
-                </v-list-item>
-                </v-list-item-group>
-              </v-list>
+              </v-list-item>
+              </v-list-item-group>
+            </v-list>
 
-          </v-card>
-        </div>
+    </v-navigation-drawer>
 
 
 
-      </v-row>
 
 
 
@@ -57,10 +57,6 @@
       fixed
 
     >
-
-
-
-
       <v-spacer />
       <v-menu offset-y
 
@@ -85,9 +81,9 @@
       <v-icon class="pa-2" color="yellow">message</v-icon>
     </v-app-bar>
     <v-main>
-      <v-container>
+
         <nuxt />
-      </v-container>
+
     </v-main>
 
     <v-footer
@@ -120,29 +116,20 @@ export default {
         },
         {
 
-          title: 'SERVICE',
+          title: 'ABOUT',
           to: '/inspire'
         },
         {
 
-          title: 'TEAM',
-          to: '/team'
+          title: 'BLOGS',
+          to: '/blog/blog'
         },
         {
 
           title: 'PORDFOLIO',
           to: '/pordfolio'
         },
-        {
 
-          title: 'ABOUT',
-          to: '/about'
-        },
-        {
-
-          title: 'BLOG',
-          to: '/blog'
-        },
          {
 
           title: 'CONTACT',
@@ -168,8 +155,11 @@ export default {
 </script>
 
 <style>
-  navigation_bar {
-    background-color: red;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
   .text-size{
     font-size: 1rem;
