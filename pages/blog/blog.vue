@@ -2,10 +2,10 @@
         <v-container class="pa-0 ml-2 mt-0" fluid >
         <v-row class="main">
                <div>
-                <h2 style="font-size:2rem;margin-left:2rem;">BLOGS</h2>
+                <h2 style="font-size:2rem;margin-left:1.6rem;">BLOGS</h2>
                </div>
               <div class="navigation_bar">
-                <ul style="margin-top:5px;">
+                <ul style="margin-top:1vh;">
                       <li><a href="#">3D Game</a></li>
                       <li><a href="#">Game Design</a></li>
                       <li><a href="#">Company Ranking</a></li>
@@ -28,24 +28,26 @@
                           v-slot:default="{ hover }"
                           close-delay="40"
                          >
-                            <v-card
-                              :elevation="hover ? 16 : 2"
-                              :class="{ 'on-hover': hover }"
-                              class="ma-3 cardpanel"
+                            <div>
+                              <v-card
+                                :elevation="hover ? 16 : 2"
+                                :class="{ 'on-hover': hover }"
+                                class="ma-3 cardpanel"
 
 
-                              >
+                                >
 
-                                <v-img :src="blog.img" alt="">
-                                  <v-card-text class="font-weight-medium subtitle-1 card_content">
-                                  <span>{{ blog.content }} </span> <br>
-                                    <v-btn :href="blog.src" style="float:right;" text >More <v-icon>mdi-chevron-right</v-icon> </v-btn>
-                                  </v-card-text>
+                                  <v-img style="padding-bottom:2vh;" :src="blog.img" alt="">
+                                    <v-card-text class="font-weight-medium subtitle-1 card_content">
+                                    <span style="display:block;">{{ blog.content }} </span>
+                                      <v-btn :href="blog.src" style="float:right;" text >More <v-icon>mdi-chevron-right</v-icon> </v-btn>
+                                    </v-card-text>
 
 
-                                </v-img>
+                                  </v-img>
 
-                            </v-card>
+                              </v-card>
+                            </div>
 
                         </v-hover>
             </v-col>
@@ -130,17 +132,15 @@
 .card_content {
   position: absolute;
    bottom: 0%;
-  height: 44%;
+  height: 40%;
   background-color: black;
   opacity: .7;
 }
-.gameinfo {
-  padding-top:12vh;
-}
+
 
 .navigation_bar ul li {
   display: inline-block;
-  margin-left: 4rem;
+  margin-left: 3vw;
 }
 .navigation_bar ul li a {
   position: relative;

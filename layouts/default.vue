@@ -5,7 +5,7 @@
       fixed
       app
       permanent
-      width="9vw"
+      width="9.5vw"
       class="navigation_width"
       tile
       style="background-color:black;"
