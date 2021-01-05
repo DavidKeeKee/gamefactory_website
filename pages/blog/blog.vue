@@ -19,8 +19,8 @@
 
           <v-row>
 
-            <v-col v-for="(blog,i) in blogs" :src="blogs.src"
-              :key="i" cols="3" style="padding:0;" >
+            <v-col  class="blogs"
+               cols="3" style="padding:0;" >
 
 
 
@@ -37,14 +37,19 @@
 
                                 >
 
-                                  <v-img style="padding-bottom:2vh;" :src="blog.img" alt="">
+                                  <!-- <v-img style="padding-bottom:2vh;height:26vh;" :src="blog.img" alt="">
                                     <v-card-text class="font-weight-medium subtitle-1 card_content">
                                     <span style="display:block;">{{ blog.content }} </span>
-                                      <v-btn :href="blog.src" style="float:right;" text >More <v-icon>mdi-chevron-right</v-icon> </v-btn>
+                                      <v-btn type="link" linkTo="#" :blogs="blogs" :href="blog.src" style="float:right;" text >More {{blog.id}} <v-icon>mdi-chevron-right</v-icon> </v-btn>
                                     </v-card-text>
+                                  </v-img> -->
 
-
-                                  </v-img>
+                                <v-img style="padding-bottom:2vh;height:26vh;" src="/3d_characters/blog.jpg" alt="">
+                                  <v-card-text class="font-weight-medium subtitle-1 card_content">
+                                  <span style="display:block;">The impact of 1 computer hardware upon a video Game Developer</span>
+                                    <v-btn type="link" linkTo="#"  href="/blog/detailone" style="float:right;" text >More <v-icon>mdi-chevron-right</v-icon> </v-btn>
+                                  </v-card-text>
+                                </v-img>
 
                               </v-card>
                             </div>
@@ -58,62 +63,18 @@
 </template>
 
 <script>
+import {mapState} from 'vuex';
   export default {
+    computed: {
+        ...mapState ({
+          blogs: state => state.blogs
+        })
+    },
 
     data(){
       return{
-        blogs: [
-          {
-            content: 'The impact of 10 computer hardware upon a video Game Developer ',
-            img: '/3d_characters/blog.jpg',
-            src: '/blog/blog_detail'
-          },
-          {
-            content: 'The impact of 10 computer hardware upon a video Game Developer',
-            img: '/3d_characters/blog.jpg',
-            src: '/blog/blog_detail'
-          },
-          {
-            content: 'The impact of 10 computer hardware upon a video Game Developer',
-            img: '/3d_characters/blog.jpg',
-            src: '/blog/blog_detail'
-          },
-          {
-            content: 'The impact of 10 computer hardware upon a video Game Developer',
-            img: '/3d_characters/blog.jpg',
-            src: '/blog/blog_detail'
-          },
-          {
-            content: 'The impact of 10 computer hardware upon a video Game Developer',
-            img: '/3d_characters/blog.jpg',
-            src: '/blog/blog_detail'
-          },
-          {
-            content: 'The impact of 10 computer hardware upon a video Game Developer',
-            img: '/3d_characters/blog.jpg',
-            src: '/blog/blog_detail'
-          },
-          // {
-          //   content: 'The impact of 10 computer hardware upon a video Game Developer',
-          //   img: '/3d_characters/blog.jpg',
-          //   src: 'Sega'
-          // },
-          // {
-          //   content: 'The impact of 10 computer hardware upon a video Game Developer',
-          //   img: '/3d_characters/blog.jpg',
-          //   src: 'Sega'
-          // },
-          // {
-          //   content: 'The impact of 10 computer hardware upon a video Game Developer',
-          //   img: '/3d_characters/blog.jpg',
-          //   src: 'Sega'
-          // },
-          // {
-          //   content: 'The impact of 10 computer hardware upon a video Game Developer',
-          //   img: '/3d_characters/blog.jpg',
-          //   src: 'Sega'
-          // },
-        ],
+
+
       }
     },
    methods:{

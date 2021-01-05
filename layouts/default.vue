@@ -1,62 +1,87 @@
 <template>
-  <v-app  >
-
+  <v-app>
     <v-navigation-drawer
       fixed
       app
-      permanent
-      width="9.5vw"
+
+      v-model="drawer"
+      absolute
+
+
+      width="170"
+      height="100%"
+
       class="navigation_width"
       tile
       style="background-color:black;"
-
     >
+      <v-list
+        flat
+        dense
+        color="black"
+        active-class="black"
+
+      >
+        <v-list-item-group
+           v-model="group"
+          color="yellow"
+
+        >
+        <v-img src="/icon/LOGO.png" class="logo mt-12"></v-img>
+        <v-list-item
+          class="click_active mt-1"
+          v-for="item in items"
+          :key="item.title"
+          :to="item.to"
+        >
 
 
-
-            <v-img src="/icon/LOGO.png" class="logo"></v-img>
-
-            <v-list
-              flat
-              dense
-              color="black"
-              active-class="black"
-
-            >
-              <v-list-item-group
-                color="yellow"
-              >
-              <v-list-item
-                class="click_active"
-                v-for="item in items"
-                :key="item.title"
-                :to="item.to"
-              >
+          <v-list-item-content>
+            <v-list-item-title class="pl-3"><span class="text-size navigation_group" >{{ item.title }}</span></v-list-item-title>
+          </v-list-item-content>
 
 
-                <v-list-item-content>
-                  <v-list-item-title class="pl-3"><span class="text-size">{{ item.title }}</span></v-list-item-title>
-                </v-list-item-content>
+        </v-list-item>
+        </v-list-item-group>
+      </v-list>
 
+      <v-menu
+        open-on-hover
+        :offset-x="offset"
+      >
+        <template v-slot:activator="{ on, attrs }">
 
-              </v-list-item>
-              </v-list-item-group>
-            </v-list>
+          <span dark
+            v-bind="attrs"
+            v-on="on"
+            class="text-size navigation_group pl-7"
+          >BLOGS</span>
+        </template>
 
+        <v-list class="pl-16" style="background-color:black; opacity:0.8;">
+          <v-list-item
+            v-for="(blog, index) in blogs"
+            :key="index"
+          >
+            <v-list-item-title class="">
+              <span class="pl-4 pr-3 blog_title right_arrow">{{ blog.titleone }} {{ blog.titletwo }} <span>{{ blog.titlethree }}</span>
+              </span>
+              </v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-navigation-drawer>
 
 
 
 
-
-
     <v-app-bar
-      style="margin-left:7.7vw;"
       height="50"
       color="black"
       fixed
 
     >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer" x-large></v-app-bar-nav-icon>
       <v-spacer />
       <v-menu offset-y
 
@@ -105,6 +130,8 @@ export default {
   },
   data () {
     return {
+      drawer: false,
+      group: null,
       clipped: false,
       drawer: true,
       fixed: false,
@@ -142,6 +169,13 @@ export default {
 
       ],
 
+       blogs: [
+        { titleone: 'GAME DESIGN',active:false },
+        { titletwo: 'GAME DEVELOPMENT',active:false },
+        { titlethree: 'APT PRODUCTION',active:true},
+      ],
+      offset: true,
+
 
       miniVariant: false,
       right: true,
@@ -150,7 +184,24 @@ export default {
       }
 
     }
-  }
+  },
+  // computed: {
+  //   mini() {
+  //     switch (this.$vuetify.breakpoint.name) {
+  //       case 'xs': return true
+  //       case 'sm': return true
+  //       case 'md': return true
+  //       case 'lg': return false
+  //       case 'xl': return false
+  //   }
+  // }
+  // },
+  watch: {
+    group () {
+      this.drawer = false
+    },
+  },
+
 }
 </script>
 
@@ -167,9 +218,25 @@ export default {
   }
 
   .logo{
-    width: 3.3vw;
-    height: 7vh;
+    width: 38%;
+    height: auto;
     margin-left: 1.8rem;
   }
+
+  .navigation_group:hover {
+    color: yellow;
+  }
+
+  .blog_title {
+   font-family: 'Libre Baskerville', serif;
+  }
+  .blog_title:hover {
+    color: yellow;
+  }
+
+  .right_arrow::after {
+    content: url("/icon/right_arrow.png");
+  }
+
 
 </style>

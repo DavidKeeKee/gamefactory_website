@@ -17,7 +17,7 @@
 
     <div class="about_website">
       <div class="meet_game_factory">
-          <h1 class="heading_info">MEET GAME FACTORY</h1>
+          <div v-scroll-reveal.reset><h1 class="heading_info">MEET GAME FACTORY</h1></div>
           <p class="meet_game_factory_text">Game Factory is a mobile game development  company that provides the absolute best CP value
             for mobile game outsourcing. We have the top management team in Taiwan (with over 20 years of
             experience in game development) responsible for the full outsourcing of Myanamr's top technical talent.
@@ -963,7 +963,7 @@ h1.heading_info{
 
   .full_level_img{
     width: 5vw;
-    height: 7.8vh;
+    height: auto;
     margin: 0 auto;
     margin-bottom:1rem;
   }
@@ -982,13 +982,13 @@ h1.heading_info{
 
   .Game_Design{
     width: 3.4vw;
-    height: 7vh;
+    height: auto;
     margin: 0 auto;
     margin-bottom:1rem;
   }
   .Game_Development{
     width: 2.2vw;
-    height: 6.9vh;
+    height: auto;
     margin: 0 auto;
     margin-bottom:1rem;
   }

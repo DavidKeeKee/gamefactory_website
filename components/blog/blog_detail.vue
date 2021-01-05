@@ -1,25 +1,23 @@
 <template>
         <v-container class="pa-0 ml-2 mt-0" fluid >
-        <v-row class="main" v-for="blog in blogs"  :key="blog.id">
-          <v-img class="img" :src="blog.img" width="100%" height="30vh"  alt="">
+        <v-row class="main" v-for="(blog,i) in blogs"  :key="i">
+          <v-img class="img" :src="blog.img" width="100%" height="30vh" alt="">
               <div class="header_main">
-                <h2 class="content" v-if="blog.id">{{blog.content}}</h2>
-                <p class="paragraph" v-if="blog.id">gamefactory-3d game, game design companies, Game Developers, Game Development, game development outsourcing, game outsourcing, game outsourcing companies, Game Programmer, Gaming, Gaming programmer, outsourcing game development, Video Game Companies-2020-09-21</p>
+                <h2 class="content">The Impact of 10 Computer Hardware upon a Video Game Developer</h2>
+                <p class="paragraph">gamefactory-3d game, game design companies, Game Developers, Game Development, game development outsourcing, game outsourcing, game outsourcing companies, Game Programmer, Gaming, Gaming programmer, outsourcing game development, Video Game Companies-2020-09-21</p>
               </div>
           </v-img>
         </v-row>
+
+
+
+
+
 </v-container>
 </template>
 <script>
-  import {mapState} from 'vuex';
   export default {
-     computed: {
-        ...mapState ({
-          blogs: state => state.blogs,
-
-        }),
-
-    },
+    props: ['blogs'],
 
     data(){
       return{
