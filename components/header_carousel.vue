@@ -21,8 +21,8 @@
                     <span>Change Skill:</span> {{item.change_skill}}/
                     <span>Source Code:</span> {{item.source_code}} <br> <br>
 
-                <v-btn :href="item.href" large color="#7160ed">
-                  Play Video
+                <v-btn :href="item.href" :width="button_width"  :height="button_height"   color="#7160ed">
+                  <span class="text_btn">Play Video</span>
                 </v-btn>
 
               </div>
@@ -80,6 +80,27 @@
         }
       ],
     }),
+    computed:{
+        button_width() {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 100
+          case 'sm': return 120
+          case 'md': return 130
+          case 'lg': return 130
+          case 'xl': return 140
+        }
+      },
+        button_height() {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 30
+          case 'sm': return 40
+          case 'md': return 48
+          case 'lg': return 48
+          case 'xl': return 50
+        }
+      }
+
+    },
   }
 </script>
 
@@ -91,16 +112,45 @@
   font-family: 'Libre Baskerville', serif;
 }
 
-  @media screen and (min-width: 1800px) {
+
+  @media screen and (max-width: 1000px) {
      body {
       width: 100%;
       padding: 0;
       margin: 0;
     }
 
-    .carousel_card {
-
+    .header_text {
+      width: 90%;
+      padding: 23% 0 0 9%;
+      font-size: 1rem;
 
     }
+  }
+
+  @media screen and (max-width: 800px) {
+
+    .header_text {
+      width: 80%;
+      padding: 20% 0 16% 9%;
+      font-size: .9rem;
+      font-family: 'Libre Baskerville', serif;
+
+    }
+    .text_btn {
+      font-size: .7rem;
+    }
+  }
+
+   @media screen and (max-width: 600px) {
+
+    .header_text {
+      width: 90%;
+      padding: 17% 0 16% 11%;
+      font-family: 'Libre Baskerville', serif;
+    }
+
+
+
   }
 </style>

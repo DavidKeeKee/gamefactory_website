@@ -14,250 +14,24 @@
     <div class="header">
       <carousel/>
     </div>
-
-    <div class="about_website">
-      <div class="meet_game_factory">
-          <div v-scroll-reveal.reset><h1 class="heading_info">MEET GAME FACTORY</h1></div>
-          <p class="meet_game_factory_text">Game Factory is a mobile game development  company that provides the absolute best CP value
-            for mobile game outsourcing. We have the top management team in Taiwan (with over 20 years of
-            experience in game development) responsible for the full outsourcing of Myanamr's top technical talent.
-          </p> <br>
-          <p class="meet_game_factory_text">What you get is an international quality product that costs only a fraction of the cost. </p><br>
-          <p class="meet_game_factory_text">Our engineers are familar with leading engines, including Unreal and Unity, which enable us to provide a powerful gaming experience and provide full production of mobile versions of these engines.</p><br>
-          <p class="meet_game_factory_text">Start today with outsourcing developement for PC/mobile games!</p>
-      </div>
-      </div>
-
-      <div class="our_experience">
-        <h1 class="heading_info" style="padding-top:3.4rem;">WHAT THE NUMBERS SAY?</h1>
-          <v-row class="our_experience_row">
-            <v-col>
-              <div class="experience_text_align">
-                <h2>20+ years Experiences</h2> <br>
-                <p class="meet_game_factory_text">in RGD, game design, and development for both PC/Console and mobile gaming.</p>
-              </div>
-            </v-col>
-
-            <v-col>
-              <div class="second_text_experience">
-                <h2>60+ Employees</h2> <br>
-                <p class="meet_game_factory_text">Around the world including: Taiwan, China, United States, Myanmar, Japan, etc.</p>
-              </div>
-            </v-col>
-
-            <v-col>
-              <div class="last_text">
-                <h2>40+ Projects</h2> <br>
-                <p class="meet_game_factory_text">of games across different Platforms:PC, IDS, Android. Adept in game engines such as Unity.</p>
-              </div>
-            </v-col>
-          </v-row>
-      </div>
-
-      <div class="skill_page">
-        <v-row class="our_experience_row">
-
-            <div class="pb-8">
-              <h2 style="text-align: center;">SKILLS</h2> <br>
-              <p class="meet_game_factory_text">We are familiar with the language of mobile game development. This means we can meet all your needs in Unity, C#, C,
-              Delphi, Java, SQL and other development languages. Also familiar with the Unity game engine, if you are interested in
-              us, you are welcome to contact us.</p>
-            </div>
+          <!-- Start about website -->
+            <aboutwebsite/>
+          <!-- End about website -->
 
 
-
-            <v-row>
-
-                <v-col cols="2" style="text-align:center; font-size:1.5rem; color:#f7d40e;">
-                    <div>Unity</div>
-                    <div class="mt-10">Unreal</div>
-                    <div class="mt-10">C++</div>
-                    <div class="mt-10">Delphi</div>
-                </v-col>
-
-                <v-col cols="1" style="text-align:center; font-size:1.5rem; color:#f7d40e;">
-                    <div>95%</div>
-                    <div class="mt-10">95%</div>
-                    <div class="mt-10">93%</div>
-                    <div class="mt-10">90%</div>
-                </v-col>
-
-                <v-col cols="9">
-                    <div class="mt-3">
-                      <v-progress-linear
-                        v-model="unity"
-                        color="#e5c006"
-                        rounded
-                        height="13"
-                      ></v-progress-linear>
-                  </div>
-
-                  <div class="mt-16">
-                      <v-progress-linear
-                        v-model="unreal"
-                        color="#e5c006"
-                        rounded
-                        height="13"
-                      ></v-progress-linear>
-                  </div>
-
-                   <div class="mt-16">
-                      <v-progress-linear
-                        v-model="cplus"
-                        color="#e5c006"
-                        rounded
-                        height="13"
-                      ></v-progress-linear>
-                  </div>
-
-                  <div class="mt-16">
-                      <v-progress-linear
-                        v-model="delphi"
-                        color="#e5c006"
-                        rounded
-                        height="13"
-                      ></v-progress-linear>
-                  </div>
-                </v-col>
-                </v-row>
-
-                </v-row>
-                <!-- <v-row class="percentage_rate">
-
-                  <span class="text_rate">Unity  </span> <span class="text_rate">95%</span>
-
-                  <v-progress-linear style="width:66rem; margin:0.6rem 0 0 12rem;"
-                    v-model="unity"
-                    color="#6157f2"
-                    rounded
-                    height="10"
-                    width="30"
-                  ></v-progress-linear>
-                </v-row>
+          <!-- Start ourexperience -->
+              <ourexperience/>
+          <!-- End ourexperience -->
 
 
-              <v-row>
-                  <span class="text_rate">Unreal  </span> <span class="text_rate">95%</span>
-
-                  <v-progress-linear style="width:66rem; margin:0.6rem 0 0 12rem;"
-                    v-model="unreal"
-                    color="#6157f2"
-                    rounded
-                    height="10"
-                    width="30"
-                  ></v-progress-linear>
-              </v-row>
-
-                <v-row>
-                  <span>C++ 93%</span>
-                  <v-progress-linear
-                    v-model="cplus"
-                    color="#6157f2"
-                    rounded
-                    height="10"
-                  ></v-progress-linear>
-                </v-row>
+          <!-- Start ourexperience -->
+            <skillpage/>
+          <!-- End ourexperience -->
 
 
-
-              <div class="">
-                <v-progress-linear
-                  v-model="delphi"
-                  color="#6157f2"
-                  rounded
-                  height="10"
-                ></v-progress-linear>
-                <div class="percentage_text">Delphi 90%</div>
-              </div> -->
-
-
-
-      </div>
-
-      <div class="our_strength">
-        <h1 class="heading_info strangth_heading">OUR STRENGTHS</h1>
-        <v-row class="our_strength_row">
-          <v-col>
-            <div class="strength_text_align">
-              <v-img src="/icon/Full_Level_Production.png" class="full_level_img"></v-img>
-              <h2 style="text-align:center;">Game Design</h2> <br>
-              <p class="meet_game_factory_text">We focus on the production of high quality games at low rates and offer a wide array of services. We can assist you with various degrees of your game project, whether it's design, art, programming, or even the whole development process.</p>
-            </div>
-          </v-col>
-
-          <v-col>
-            <div class="second_text">
-              <v-img src="/icon/Game_Design.png" class="Game_Design"></v-img>
-              <h2 style="text-align:center;">Game Development</h2> <br>
-              <p class="meet_game_factory_text">We focus on the production of high quality games at low rates and offer a wide array of services. We can assist you with various degrees of your game project, whether it's design, art, programming, or even the whole development process.</p>
-            </div>
-          </v-col>
-
-          <v-col>
-            <div class="">
-              <v-img src="/icon/Game_Development.png" class="Game_Development"></v-img>
-              <h2 style="text-align:center;">Art Production</h2> <br>
-              <p class="meet_game_factory_text">Our teams have completed full level art productions for more than 30 game titles. This includes:</p>
-              <p class="meet_game_factory_text">UI and layout analysis planning and design of modular sets concept arts in early production 3D assets and VFX creation engine integration for post production.</p>
-            </div>
-            <v-card-actions>
-
-              <v-spacer></v-spacer>
-
-              <v-btn
-                icon
-                @click="show = !show"
-              >
-                <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-col>
-          <v-expand-transition>
-            <div v-show="show">
-
-
-              <v-card-text>
-                <v-row style="line-height: 1.5;">
-                  <v-col>
-                    <div class="strength_text_align">
-                      <v-img src="/icon/3D_Animation.png" class="full_level_img_animation"></v-img>
-                      <h2 style="text-align:center;">3D Animation</h2> <br>
-                      <p class="meet_game_factory_text">Our animation team is experienced in comprehensive animation techniques and cross platform
-                      production, and is capable to satisfy the most needs on the market. We believe that only with
-                      passionate should a product reach its full potential -- to achieve this mission our team members are all
-                      gamers and artists themselves.</p>
-                    </div>
-                  </v-col>
-
-                  <v-col>
-                    <div class="second_text">
-                      <v-img src="/icon/3D_Assets.png" class="full_level_img_assets"></v-img>
-                      <h2 style="text-align:center;">3D Assets</h2> <br>
-                      <p class="meet_game_factory_text">Our teams are committed to create various kinds of 3D assets through the most advanced techniques
-                      and tools up to date. Our past experience allows us to handle a wide array of stylized assets on most
-                      of the popular game platforms. Our work on vehicles, weapons, and interior assets have been
-                      especially praised in the past.</p>
-                    </div>
-                  </v-col>
-
-                  <v-col>
-                    <div class="characters">
-                      <v-img src="/icon/3D_Characters.png" class="Game_Development"></v-img>
-                      <h2 style="text-align:center;">3D Characters</h2> <br>
-                      <p class="meet_game_factory_text">Game Factory's character production team, who are good at creating high-end realistic characters on
-                      next generation platform, have been working with many AAA developers in high-end character
-                      production projects; meanwhile, we have the extensive project experience in creating the stylized
-                      hand-painting characters.</p>
-
-                    </div>
-                  </v-col>
-                </v-row>
-              </v-card-text>
-            </div>
-          </v-expand-transition>
-        </v-row>
-      </div>
-
+          <!-- Start ourexperience -->
+            <ourstrength/>
+          <!-- End ourexperience -->
 
 
       <div class="our_team">
@@ -753,10 +527,18 @@
 
 <script>
 import carousel from '@/components/header_carousel.vue';
+import aboutwebsite from '@/components/home/about_website.vue';
+import ourexperience from '@/components/home/our_experience.vue';
+import skillpage from '@/components/home/skill_page.vue';
+import ourstrength from '@/components/home/our_strength.vue';
 
 export default {
    components:{
-     carousel
+     carousel,
+     aboutwebsite,
+     ourexperience,
+     skillpage,
+     ourstrength
   },
   methods:{
           removevalue(){
@@ -787,10 +569,6 @@ export default {
       show: false,
       moreshow:false,
       agreement: false,
-      unity: 95,
-      unreal: 95,
-      cplus: 93,
-      delphi:90,
       modal: "",
       img:'',
       modalImg:'',
@@ -869,10 +647,10 @@ export default {
   border-color: rgba(192, 0, 250, 0.986);
 }
 
-h1.heading_info{
+/* h1.heading_info{
   text-align: center;
   margin-bottom: 2rem;
-}
+} */
   .header{
     background-color:black;
     clear:both;
@@ -885,28 +663,7 @@ h1.heading_info{
     font-family: 'Libre Baskerville', serif;
   }
 
-  .about_website {
-    position: relative;
-    width: 100%;
-    margin-top: 2rem;
-    padding-bottom: 2rem;
-    clip-path: polygon(50% 7%, 53% 0, 100% 0, 100% 100%, 0 100%, 0 0, 47% 0);
-  }
 
-  .about_website::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url("/background/GF-Slider-01.png");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: top;
-    opacity: 0.2;
-
-  }
   .meet_game_factory{
     padding: 4rem 3rem 0 3rem;
     color: white;
@@ -921,30 +678,6 @@ h1.heading_info{
 
 
   /* our strenghts */
-  .our_experience{
-    position: relative;
-    font-family: 'Libre Baskerville', serif;
-    width: 100%;
-    padding-bottom: 2rem;
-
-  }
-
-  .our_experience::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url("/background/GF-Slider-02.png");
-    background-size: cover;
-    background-position: top;
-    opacity: 0.2;
-  }
-
-  .experience_text_align {
-    padding-right:5rem;
-  }
 
   .last_text{
     padding-right:2.6rem;
@@ -956,10 +689,7 @@ h1.heading_info{
   .characters{
     padding-bottom: 3rem;
   }
-  .second_text_experience {
-    padding-right: 6rem ;
 
-  }
 
   .full_level_img{
     width: 5vw;
@@ -967,18 +697,13 @@ h1.heading_info{
     margin: 0 auto;
     margin-bottom:1rem;
   }
-  .full_level_img_animation{
+  /* .full_level_img_animation{
     width: 3.3vw;
     height: 7vh;
     margin: 0 auto;
     margin-bottom:1rem;
-  }
-  .full_level_img_assets{
-    width: 3.3vw;
-    height: 7.2vh;
-    margin: 0 auto;
-    margin-bottom:1rem;
-  }
+  } */
+
 
   .Game_Design{
     width: 3.4vw;
@@ -994,29 +719,14 @@ h1.heading_info{
   }
 
   /* skill page */
-  .skill_page{
-    position: relative;
-    font-family: 'Libre Baskerville', serif;
-    width: 100%;
-  }
+
 
   .text_rate {
    font-size:1.5rem;
    margin-left:5rem;
   }
 
-  .skill_page::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url("/background/skill_page.png");
-    background-size: cover;
-    background-position: top;
-    opacity: 0.5;
-  }
+
 
   /* .skill_line{
     margin-top: 4rem;
@@ -1028,19 +738,17 @@ h1.heading_info{
 
   /*our_experience */
 
-  .our_strength{
+  /* .our_strength{
     position: relative;
     font-family: 'Libre Baskerville', serif;
     width: 100%;
     padding-bottom: 1rem;
-
-
-  }
-  .strangth_heading{
+  } */
+  /* .strangth_heading{
     padding-top: 3.8rem;
-  }
+  } */
 
-  .our_strength::before {
+  /* .our_strength::before {
     content: '';
     position: absolute;
     top: 0;
@@ -1052,7 +760,7 @@ h1.heading_info{
     background-position: top;
     opacity: 0.2;
 
-  }
+  } */
    .our_experience_row{
      padding:3rem;
   }
@@ -1074,12 +782,12 @@ h1.heading_info{
 
 
   }
-  .our_strength_row{
+  /* .our_strength_row{
      padding-top:1.7rem;
      padding-bottom: 4.6rem;
      padding-right: 3rem;
      padding-left: 3rem;
-  }
+  } */
   .team_img {
     margin: 0 auto;
     width: 11rem;
