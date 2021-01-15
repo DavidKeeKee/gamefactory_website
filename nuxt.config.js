@@ -42,6 +42,10 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    // ['nuxt-vue-material', {
+    //   theme: 'default-dark',
+    //   components: ['MdDrawer', 'MdRadio', 'MdMenu', 'MdContent', 'MdList', 'MdButton', 'MdToolbar',]
+    // }],
   ],
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)

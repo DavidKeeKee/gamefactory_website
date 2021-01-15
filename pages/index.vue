@@ -55,7 +55,7 @@
 
           <v-col class="chu_box">
            <div>
-             <v-img src="/team/CTO.png" class="team_img"></v-img>
+             <v-img src="/team/cto/cto.png" class="team_img"></v-img>
             <h3 class="team_name team_name_nic">Nic Chu</h3>
             <div class="team_position">CTO</div>
            </div>
@@ -70,6 +70,12 @@
           </v-col>
         </v-row>
       </div>
+
+
+          <!-- Start ourexperience -->
+           <memberexperience/>
+          <!-- End ourexperience -->
+
 
 
 
@@ -94,8 +100,18 @@
                               </v-btn>
 
                               <div class="arrow_list" v-if="showDropdown" >
-                                <v-btn color="#333333" text><span class="arrow_list_link twoD_link" href="">2D</span></v-btn>
-                                <v-btn color="#333333" text><span class="arrow_list_link threeD_link" href="">3D</span></v-btn>
+                                <v-btn
+                                v-for="(button,index) in buttons"
+                                :key="index"
+                                 @click="changestatus(button.active)"
+                                :class ="button.active ? 'md-raised':''"
+                                color="#333333"
+                                text>
+                                  <span class="arrow_list_link twoD_link">
+                                    {{ button.name }}
+                                  </span>
+                                </v-btn>
+                                <!-- <v-btn color="#333333" text><span class="arrow_list_link threeD_link" @click="show3Dpic = !show3Dpic">3D</span></v-btn> -->
                               </div>
                           </div>
 
@@ -103,7 +119,11 @@
                         </v-col>
                     </v-row>
 
-                      <div class="portfolio_img_layer">
+<!-- start 3D -->
+                      <div
+                        class="portfolio_img_layer"
+                        v-show="activestatus == true"
+                      >
                           <v-row class="text-center align-center justify-center">
 
                             <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (95).jpg');" src="/3d_characters/cha (95).jpg"
@@ -115,6 +135,8 @@
                             <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (23).jpg');" src="/3d_characters/cha (23).jpg"
                              alt="placeholder">
                           </v-row>
+
+
 
                           <v-row class="text-center align-center justify-center">
 
@@ -146,10 +168,66 @@
 
                       </div>
 
+          <!-- end 3D -->
 
 
-         <div class="second_more" v-show="moreshow">
-            <v-row class="text-center align-center justify-center">
+
+
+          <!-- start 2D -->
+                      <div  v-show="activestatus == false" class="portfolio_img_layer" v-if="!show2Dpic">
+
+                          <v-row class="text-center align-center justify-center">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-01.jpg');" src="/2DThumbnail/2d-01_1.png"
+                             alt="placeholder">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-02.jpg');" src="/2DThumbnail/2d-02_1.png"
+                             alt="placeholder">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-03.jpg');" src="/2DThumbnail/2d-03_1.png"
+                             alt="placeholder">
+                          </v-row>
+
+
+                          <v-row class="text-center align-center justify-center">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-04.jpg');" src="/2DThumbnail/2d-04_1.png"
+                             alt="placeholder">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-05.jpg');" src="/2DThumbnail/2d-05_1.png"
+                             alt="placeholder">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-06.jpg');" src="/2DThumbnail/2d-06_1.png"
+                             alt="placeholder">
+                          </v-row>
+
+                          <v-row class="text-center align-center justify-center">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-07.jpg');" src="/2DThumbnail/2d-07_1.png"
+                             alt="placeholder">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-08.jpg');" src="/2DThumbnail/2d-08_1.png"
+                             alt="placeholder">
+
+                            <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-09.jpg');" src="/2DThumbnail/2d-09_1.png"
+                             alt="placeholder">
+                          </v-row>
+
+
+                      </div>
+
+          <!-- end 2D -->
+
+
+
+
+
+
+
+
+          <!-- start 3D -->
+         <div v-if="activestatus == true" class="second_more" v-show="moreshow">
+            <v-row  class="text-center align-center justify-center">
 
               <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/3d_characters/cha (1).jpg');" src="/3d_characters/cha (1).jpg"
                alt="placeholder">
@@ -188,6 +266,75 @@
                  alt="placeholder">
             </v-row>
         </div>
+        <!-- end 3D -->
+
+
+        <!-- start 2D -->
+        <div v-if="activestatus == false" class="second_more" v-show="moreshow">
+            <v-row class="text-center align-center justify-center">
+
+              <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-10.jpg');" src="/2DThumbnail/2d-10_1.png"
+               alt="placeholder">
+
+              <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-11.jpg');" src="/2DThumbnail/2d-11_1.png"
+               alt="placeholder">
+
+              <img id="myImg" class="portfolio_img portfolio_img_left" @click="showImg('/2D/2d-12.jpg');" src="/2DThumbnail/2d-12_1.png"
+               alt="placeholder">
+            </v-row>
+
+            <v-row class="text-center align-center justify-center">
+
+               <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/2D/2d-13.jpg');" src="/2DThumbnail/2d-13_1.png"
+               alt="placeholder">
+
+
+              <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/2D/2d-14.jpg');" src="/2DThumbnail/2d-14_1.png"
+               alt="placeholder">
+
+
+
+              <img id="myImg" class="portfolio_img portfolio_img_center" @click="showImg('/2D/2d-15.jpg');" src="/2DThumbnail/2d-15_1.png"
+               alt="placeholder">
+            </v-row>
+
+            <v-row class="text-center align-center justify-center">
+
+                <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-16.jpg');" src="/2DThumbnail/2d-16_1.png"
+                 alt="placeholder">
+
+                <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-17.jpg');" src="/2DThumbnail/2d-17_1.png"
+                 alt="placeholder">
+
+                 <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-18.jpg');" src="/2DThumbnail/2d-18_1.png"
+                 alt="placeholder">
+            </v-row>
+
+          <v-row class="text-center align-center justify-center">
+
+              <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-19.jpg');" src="/2DThumbnail/2d-19_1.png"
+               alt="placeholder">
+
+              <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-20.jpg');" src="/2DThumbnail/2d-20_1.png"
+               alt="placeholder">
+
+               <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-21.jpg');" src="/2DThumbnail/2d-21_1.png"
+               alt="placeholder">
+          </v-row>
+
+          <v-row class="text-center align-center justify-center">
+
+              <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-22.jpg');" src="/2DThumbnail/2d-22_1.png"
+               alt="placeholder">
+
+              <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-23.jpg');" src="/2DThumbnail/2d-23_1.png"
+               alt="placeholder">
+
+               <img id="myImg" class="portfolio_img portfolio_img_right" @click="showImg('/2D/2d-24.jpg');" src="/2DThumbnail/2d-24_1.png"
+               alt="placeholder">
+          </v-row>
+        </div>
+        <!-- end 2D -->
 
 
 
@@ -204,169 +351,10 @@
 
       </div>
 
-      <div class="our_client" style="background-color:#494949;">
-        <h1 class="heading_info_header_client">OUR CLIENT</h1>
-        <v-carousel v-model="model">
-          <v-carousel-item>
-            <v-sheet
-            class="img_sheet"
-              color="#494949"
-              height="30%"
-              tile
-            >
-              <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-              >
-                <div class="display-3">
-                  <v-row>
-                    <v-col>
-                      <div class="smart_game client_img">
 
-                      </div>
-                    </v-col>
-
-                    <v-col >
-                      <div class="client_img_frame client_img aimhigh_global">
-                      </div>
-                    </v-col>
-
-                    <v-col>
-                     <div class="client_img_frame client_img compal">
-
-                     </div>
-                    </v-col>
-
-                    <v-col>
-                      <div class="client_img_frame">
-                        <v-img src="/clients_page/chinese_gamer.jpg" class="client_img"></v-img>
-                      </div>
-                    </v-col>
-                  </v-row>
-                </div>
-              </v-row>
-            </v-sheet>
-          </v-carousel-item>
-
-
-          <v-carousel-item>
-            <v-sheet
-            class="img_sheet"
-              color="#494949"
-              height="30%"
-              tile
-            >
-              <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-              >
-                <div class="display-3">
-                  <v-row>
-                    <v-col>
-                      <div class="hidden_boss client_img">
-
-                      </div>
-                    </v-col>
-
-                    <v-col >
-                      <div class="client_img_frame client_img jumbo">
-                      </div>
-                    </v-col>
-
-                    <v-col>
-                     <div class="client_img_frame client_img metwo">
-
-                     </div>
-                    </v-col>
-
-                    <v-col>
-                      <div class="client_img_frame">
-                        <v-img src="/clients_page/nanshanlife.jpg" class="client_img"></v-img>
-                      </div>
-                    </v-col>
-                  </v-row>
-                </div>
-              </v-row>
-            </v-sheet>
-          </v-carousel-item>
-
-
-          <v-carousel-item>
-            <v-sheet
-            class="img_sheet"
-              color="#494949"
-              height="30%"
-              tile
-            >
-              <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-              >
-                <div class="display-3">
-                  <v-row>
-                    <v-col>
-                      <div class="noxy_games client_img">
-
-                      </div>
-                    </v-col>
-
-                    <v-col >
-                      <div class="client_img_frame client_img oath">
-                      </div>
-                    </v-col>
-
-                    <v-col>
-                     <div class="client_img_frame client_img softstar">
-
-                     </div>
-                    </v-col>
-
-                    <v-col>
-                      <div class="client_img_frame">
-                        <v-img src="/clients_page/onemt.jpg" class="client_img"></v-img>
-                      </div>
-                    </v-col>
-                  </v-row>
-                </div>
-              </v-row>
-            </v-sheet>
-          </v-carousel-item>
-
-           <v-carousel-item>
-            <v-sheet
-            class="img_sheet"
-              color="#494949"
-              height="30%"
-              tile
-            >
-              <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-              >
-                <div class="display-3">
-                  <v-row>
-                    <v-col>
-                      <div class="softworld client_img">
-
-                      </div>
-                    </v-col>
-
-                    <v-col >
-                      <div class="client_img_frame client_img yahoo">
-                      </div>
-                    </v-col>
-
-                  </v-row>
-                </div>
-              </v-row>
-            </v-sheet>
-          </v-carousel-item>
-        </v-carousel>
-      </div>
+            <!-- Start ourexperience -->
+              <ourclient/>
+            <!-- End ourexperience -->
 
             <div class="testimonials">
               <h1 class="heading_info_portfolio testimonial_heading">TESTIMONIALS</h1>
@@ -529,16 +517,21 @@
 import carousel from '@/components/header_carousel.vue';
 import aboutwebsite from '@/components/home/about_website.vue';
 import ourexperience from '@/components/home/our_experience.vue';
+import ourclient from '@/components/home/our_client.vue';
 import skillpage from '@/components/home/skill_page.vue';
 import ourstrength from '@/components/home/our_strength.vue';
+import memberexperience from '@/components/home/team_member_experience.vue';
+
 
 export default {
    components:{
      carousel,
      aboutwebsite,
      ourexperience,
+     ourclient,
      skillpage,
-     ourstrength
+     ourstrength,
+     memberexperience
   },
   methods:{
           removevalue(){
@@ -559,8 +552,20 @@ export default {
           imageclose() {
             var close = document.getElementById("myModal");
             close.style.display = "none"
+          },
+          changestatus(value) {
+            //console.log(value);
+            this.buttons.forEach( item => {
+              if(value == false) {
+                this.activestatus = false
+              } else {
+                this.activestatus = true
+              }
+              //console.log( this.activestatus)
+            })
           }
         },
+
 
 
   data () {
@@ -575,6 +580,13 @@ export default {
       captionText:'',
       largeimage:'',
       src:'',
+      show2Dpic:false,
+      show3Dpic:true,
+      activestatus:true,
+      buttons:[
+          {name:'2D',active:false},
+          {name:'3D',active:true}
+      ],
       rules: {
         email: v => !!(v || '').match(/@/) || 'Please enter a valid email',
         length: len => v => (v || '').length >= len || `Invalid character length, required ${len}`,
@@ -616,6 +628,7 @@ export default {
 
     }
   },
+
 
 }
 </script>
@@ -727,40 +740,6 @@ export default {
   }
 
 
-
-  /* .skill_line{
-    margin-top: 4rem;
-  } */
-/* .percentage_text{
-    text-align:right;
-   padding-top:1rem;
-} */
-
-  /*our_experience */
-
-  /* .our_strength{
-    position: relative;
-    font-family: 'Libre Baskerville', serif;
-    width: 100%;
-    padding-bottom: 1rem;
-  } */
-  /* .strangth_heading{
-    padding-top: 3.8rem;
-  } */
-
-  /* .our_strength::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: url("/background/GF-Slider-03.png");
-    background-size: cover;
-    background-position: top;
-    opacity: 0.2;
-
-  } */
    .our_experience_row{
      padding:3rem;
   }
@@ -811,14 +790,7 @@ export default {
   .roy_box{
      margin-right: 12rem;
   }
-  .chu_box{
 
-
-  }
-  .peter_box{
-
-
-  }
   .gray_box{
     padding-left: 10rem;
   }
@@ -897,7 +869,7 @@ export default {
 
 }
 .twoD_link{
-  padding-left: 12rem;
+  padding-left: 8rem;
 }
 .threeD_link{
     padding-left: 2rem;
@@ -1010,88 +982,6 @@ export default {
   .client_img_frame{
     margin-left: 4rem;
   }
-
-.smart_game{
-  background-image: url('/clients_page/smart_games.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-}
-
-.hidden_boss{
-  background-image: url('/clients_page/hidden_boss.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-}
-.noxy_games {
-  background-image: url('/clients_page/noxy_games.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-}
-
-.oath {
-  background-image: url('/clients_page/oath.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-   background-position:top;
-}
-
-.softstar {
-  background-image: url('/clients_page/softstar.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-   background-position:top;
-}
-
-.yahoo {
-  background-image: url('/clients_page/yahoo.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-   background-position:top;
-}
-
-.softworld {
-  background-image: url('/clients_page/soft_world.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-   background-position:top;
-}
-
-.jumbo{
-  background-image: url('/clients_page/jumbo.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-}
-.metwo{
-  background-image: url('/clients_page/me2.jpg');
-  background-size: cover;
-  width: 7.8rem;
-  height: 7.8rem;
-}
-
-.aimhigh_global {
-  background-image: url('/clients_page/aimhigh_global.jpg');
-  background-size: cover;
-  /* background-attachment: fixed; */
-  background-position: right top;
-
-}
-
-.compal{
-  background-image: url('/clients_page/compal.jpg');
-  background-size: cover;
-  background-position: right top;
-  width: 7.8rem;
-  height: 7.8rem;
-}
-
 
 
 /*testimonials */
