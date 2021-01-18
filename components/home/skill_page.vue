@@ -1,6 +1,6 @@
 <template>
         <div class="skill_page">
-          <v-row class="our_experience_row">
+          <!-- <v-row class="our_experience_row">
 
               <div class="pb-8">
                 <h2 style="text-align: center;">SKILLS</h2> <br>
@@ -66,7 +66,84 @@
                   </v-col>
                   </v-row>
 
-                  </v-row>
+                  </v-row> -->
+
+                  <div class="our_experience_row" >
+                    <v-row>
+                       <div class="pb-8">
+                        <h2 style="text-align: center;">SKILLS</h2> <br>
+                        <p class="meet_game_factory_text">We are familiar with the language of mobile game development. This means we can meet all your needs in Unity, C#, C,
+                        Delphi, Java, SQL and other development languages. Also familiar with the Unity game engine, if you are interested in
+                        us, you are welcome to contact us.</p>
+                      </div>
+                    </v-row>
+
+                    <v-row class="text_font">
+                      <v-row style="text-align:center; color:#f7d40e;">
+                          <div class="unity">Unity</div>
+                          <div class="percentage">95%</div>
+
+
+                              <v-progress-linear
+                                class="progress_bar"
+                                v-model="unity"
+                                color="#e5c006"
+                                rounded
+                                :height="bar_height"
+                              ></v-progress-linear>
+
+
+
+                      </v-row>
+                    </v-row>
+                    <v-row class="text_font">
+                      <v-row style="text-align:center; color:#f7d40e;">
+                          <div class="unity">Unreal</div>
+                          <div class="percentage">95%</div>
+
+
+                            <v-progress-linear
+                              class="progress_bar"
+                              v-model="unreal"
+                              color="#e5c006"
+                              rounded
+                              :height="bar_height"
+                            ></v-progress-linear>
+                      </v-row>
+                    </v-row>
+
+                    <v-row class="text_font">
+                      <v-row style="text-align:center; color:#f7d40e;">
+                          <div class="unity">C++</div>
+                          <div class="percentage">93%</div>
+
+
+                            <v-progress-linear
+                              class="progress_bar"
+                              v-model="unreal"
+                              color="#e5c006"
+                              rounded
+                              :height="bar_height"
+                            ></v-progress-linear>
+                      </v-row>
+                    </v-row>
+
+                    <v-row class="text_font">
+                      <v-row style="text-align:center; color:#f7d40e;">
+                          <div class="unity">Delphi</div>
+                          <div class="percentage">90%</div>
+
+
+                            <v-progress-linear
+                              class="progress_bar"
+                              v-model="unreal"
+                              color="#e5c006"
+                              rounded
+                              :height="bar_height"
+                            ></v-progress-linear>
+                      </v-row>
+                    </v-row>
+                  </div>
 
         </div>
 </template>
@@ -98,6 +175,18 @@
   }
 </script>
 <style scoped>
+  .progress_bar{
+    width:70%;
+    margin:0.6rem 0 0 2rem;
+  }
+  .unity {
+    margin-left: 3rem;
+    width: 10%;
+  }
+  .percentage {
+    margin-left: 3rem;
+  }
+
 .bar_adjustmentone {
   margin-top: 1vh;
 }
@@ -137,6 +226,7 @@
 
   .text_font {
     font-size: 1.5em;
+    margin-top: 2rem;
   }
 
    @media screen and (max-width: 1000px) {
@@ -150,6 +240,16 @@
    .text_font {
     font-size: 1.3em;
   }
+    .progress_bar{
+      width:70% !important;
+
+    }
+    .unity {
+      margin-left: 2rem !important;
+    }
+    .percentage {
+      margin-left: 2rem !important;
+    }
 
   }
 
@@ -162,6 +262,16 @@
     }
      .text_font {
       font-size: 1.3em;
+    }
+    .progress_bar{
+      width:53% !important;
+      margin:0.6rem 0 0 5rem !important;
+    }
+    .unity {
+      margin-left: 1rem !important;
+    }
+    .percentage {
+      margin-left: 2rem !important;
     }
 
   }
@@ -183,6 +293,24 @@
     }
      .text_font {
       font-size: 1.1em;
+    }
+    .progress_bar{
+      width:42% !important;
+    }
+    .unity {
+      margin-left: 0.5rem !important;
+    }
+    .percentage {
+      margin-left: .5rem !important;
+    }
+     .our_experience_row{
+       padding:2rem;
+    }
+    .percentage {
+      margin-left: 2rem !important;
+    }
+    .unity {
+      margin-left: 1rem !important;
     }
 
   }
